@@ -2,6 +2,11 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   grid-gap: 16px;
+
+  a {
+    text-decoration: none;
+    color: #595959;
+  }
 }
 
 .event-card {
@@ -13,9 +18,14 @@
   flex-direction: column;
   box-shadow: 0 2px 4px rgba(8,8,61,0.1);
 
+
   img {
     width: 100%;
     border-radius: 8px;
+  }
+
+  .event-title {
+    padding-top: 8px;
   }
 
   .card-content {
@@ -23,3 +33,10 @@
   }
 }
 
+#event-date {
+  background-color: #cf9d49;
+  padding: 4px 10px;
+  font-size: 14px;
+  border-radius: 16px;
+  color: #fff;
+}
