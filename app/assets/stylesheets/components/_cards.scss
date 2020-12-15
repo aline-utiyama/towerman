@@ -1,12 +1,25 @@
 .event-cards {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-gap: 16px;
 }
 
 .event-card {
   background-color: #fff;
-  width: 250px;
+  width: 320px;
   margin: 16px;
-  padding: 16px;
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 4px rgba(8,8,61,0.1);
+
+  img {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .card-content {
+    padding: 16px;
+  }
 }
+

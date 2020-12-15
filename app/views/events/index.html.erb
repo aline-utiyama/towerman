@@ -1,13 +1,18 @@
 <div class="container">
   <div>
-    <h1>Upcoming Events</h1>
-    <%= link_to "Create Event", new_event_path, class: 'main-button'  %>
+    <div class="events-heading">
+      <h1>Upcoming Events</h1>
+      <%= link_to "Create Event", new_event_path, class: 'main-button'  %>
+    </div>
     <div class="event-cards">
       <% @events.each do |event| %>
         <div class="event-card">
-          <%= event.title %>
-          <%= event.date_time.strftime("%b.#{event.date_time.day.ordinalize}") %>
-          <span>Capacity: <%= event.capacity %> people</span>
+          <img src="https://image.freepik.com/free-vector/children-playground-concept_74855-7006.jpg" alt="">
+          <div class="card-content">
+            <span><%= event.date_time.strftime("%b.#{event.date_time.day.ordinalize} %I:%M %p") %></span>
+            <h5><%= event.title %></h5>
+            <span>Capacity: <%= event.capacity %> people</span>
+          </div>
         </div>
       <% end %>
     </div>
