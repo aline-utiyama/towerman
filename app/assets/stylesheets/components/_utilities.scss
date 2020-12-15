@@ -5,7 +5,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Kulim Park', sans-serif;
-  color: #CF9E4A;
+  color: #544f4f;
 }
 
 p, a {
@@ -19,3 +19,9 @@ p, a {
   //color: #d9a935;
 }
 
+.events-heading {
+  padding: 24px 16px 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
