@@ -1,0 +1,12 @@
+.event-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.event-card {
+  background-color: #fff;
+  width: 250px;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 8px;
+}
