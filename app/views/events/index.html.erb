@@ -1,1 +1,15 @@
-<h1>Event index</h1>
+<div class="container">
+  <div>
+    <h1>Upcoming Events</h1>
+    <%= link_to "Create Event", new_event_path, class: 'main-button'  %>
+    <div class="event-cards">
+      <% @events.each do |event| %>
+        <div class="event-card">
+          <%= event.title %>
+          <%= event.date_time.strftime("%b.#{event.date_time.day.ordinalize}") %>
+          <span>Capacity: <%= event.capacity %> people</span>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
