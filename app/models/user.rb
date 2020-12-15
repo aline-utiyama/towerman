@@ -8,4 +8,8 @@ class User < ApplicationRecord
   has_many :recycles, dependent: :destroy
   has_many :events, dependent: :destroy
   has_many :events, through: :event_atendees
+
+  validates :username, uniqueness: true
+  validates :username, presence: true
+  validates :username, lenght: { in: 6..30 }
 end
