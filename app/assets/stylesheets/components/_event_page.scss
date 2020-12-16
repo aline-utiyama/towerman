@@ -1,0 +1,45 @@
+.event-page {
+  h1 {
+    padding: 16px 0;
+  }
+}
+
+.event-image {
+  width: 100%;
+  height: 250%;
+
+  img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+  }
+}
+
+.event-heading {
+
+  span {
+    margin: 0 8px;
+  }
+}
+
+.event-host {
+  display: flex;
+
+  h5 {
+    padding-right: 8px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.event-details {
+
+  .content {
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+
+  }
+}
