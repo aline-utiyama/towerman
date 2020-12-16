@@ -1,0 +1,5 @@
+<%= simple_form_for [@event,@event_atendees] do |f| %>
+  <%= f.hidden_field :event_id, value: @event.id %>
+  <%= f.input :people, :label => "How many people?" %>
+  <%= f.submit "Join", class: 'main-button' %>
+<% end %>

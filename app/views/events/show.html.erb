@@ -6,12 +6,36 @@
     <h1><%= @event.title %></h1>
     <span id="event-date"><%= @event.date_time.strftime("%b %y, %H:%M") %></span>
   </div>
-  <div class="event-host">
-    <h5>Host: </h5>
-    <p> <%= @event.user.username %></p>
-  </div>
-  <div class="event-details">
-    <h5>Details:</h5>
-    <p class="content"><%= @event.details %></p>
+  <div class="event-main">
+    <div class="main-content">
+      <div class="event-host">
+        <h5>Host: </h5>
+        <p> <%= @event.user.username %></p>
+      </div>
+      <div class="event-capatity">
+        <!-- <span class="info-icon"><i class="fas fa-users"></i></span> -->
+        <h5>Capacity: </h5>
+        <p> <%= @event.capacity %> people</p>
+      </div>
+      <div>
+        <h5>Availability:</h5>
+        <% atendees_count = 0 %>
+        <% @atendees.each do |atendee| %>
+          <% atendees_count += atendee.people %>
+        <% end %>
+        <%= @event.capacity - atendees_count %>
+      </div>
+      <div class="event-details">
+        <div class="info">
+          <!-- <span class="info-icon"><i class="fas fa-info"></i></span> -->
+          <h5>Details:</h5>
+        </div>
+        <p class="content"><%= @event.details %></p>
+      </div>
+    </div>
+    <div class="join-event-form">
+      <h3>Join this event!</h3>
+      <%= render 'event_atendees/form' %>
+    </div>
   </div>
 </div>

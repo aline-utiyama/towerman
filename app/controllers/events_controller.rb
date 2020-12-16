@@ -7,6 +7,9 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @event_atendees = EventAtendee.new
+    @atendees = EventAtendee.where(event_id: params[:id])
+
     authorize @event
   end
 
