@@ -22,7 +22,7 @@ class EventAtendeesController < ApplicationController
     authorize @event_atendee
 
     if @event_atendee.save
-      redirect_to events_path
+      redirect_to event_path(@event)
     else
       render 'event/show'
     end

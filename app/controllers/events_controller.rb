@@ -3,14 +3,14 @@ class EventsController < ApplicationController
   def index
     @events = policy_scope(Event).order(created_at: :desc)
 
+
   end
 
   def show
     @event = Event.find(params[:id])
-    @event_capacity = @event.capacity
     @event_atendees = EventAtendee.new
     @atendees = EventAtendee.where(event_id: params[:id])
-
+    @count = event_availability
     authorize @event
   end
 
@@ -25,10 +25,23 @@ class EventsController < ApplicationController
     authorize @event
 
     if @event.save
-      redirect_to events_path
+      redirect_to event_path(@event)
     else
       render :new
     end
+  end
+
+  def event_availability
+    @event = Event.find(params[:id])
+    @atendees = EventAtendee.where(event_id: params[:id])
+    @capacity = @event.capacity
+    @people = 0
+
+    @atendees.each do |atendee|
+      @people += atendee.people
+    end
+    @count = @capacity - @people
+    return @count
   end
 
   private
