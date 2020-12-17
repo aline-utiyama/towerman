@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :events do
     resources :event_atendees
   end
+  resources :event_atendees
   resources :proffessionals
   resources :recycles
 end

@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>My Events</h1>
+  <% @event_atendees.each do |event| %>
+    <% if event.user == current_user %>
+      <ul>
+        <li>
+          <%= event.user.username %>
+          <%= event.event.title %>
+        </li>
+      </ul>
+    <% end %>
+  <% end %>
+</div>

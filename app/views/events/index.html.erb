@@ -6,13 +6,19 @@
     </div>
     <div class="event-cards">
       <% @events.each do |event| %>
+        <% count = 0 %>
+        <% event.event_atendees.each do |atendee| %>
+          <% count += atendee.people %>
+        <% end %>
         <%= link_to event_path(event) do  %>
           <div class="event-card">
             <img src="https://image.freepik.com/free-vector/children-playground-concept_74855-7006.jpg" alt="">
             <div class="card-content">
               <span id="event-date"><%= event.date_time.strftime("%b %y, %H:%M") %></span>
               <h5 class="event-title"><%= event.title %></h5>
-              <span>Capacity: <%= event.capacity %> people</span>
+              <li>Created by: <%= event.user.username %></li>
+              <li>Capacity: <%= event.capacity %> people</li>
+              <li><%= event.capacity - count %> seats available</li>
             </div>
           </div>
         <% end %>
