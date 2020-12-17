@@ -4,6 +4,7 @@ class EventAtendeesController < ApplicationController
   end
 
   def show
+    @event = Event.find(params[:event_id])
     @event_atendee = EventAtendee.find(params[:id])
     authorize @event_atendee
   end
