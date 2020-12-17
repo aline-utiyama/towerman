@@ -7,9 +7,17 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
-    @event_capacity = @event.capacity
     @event_atendees = EventAtendee.new
     @atendees = EventAtendee.where(event_id: params[:id])
+    @capacity = @event.capacity
+
+    @people = 0
+
+    @atendees.each do |atendee|
+      @people += atendee.people
+    end
+
+    @count = @capacity - @people
 
     authorize @event
   end

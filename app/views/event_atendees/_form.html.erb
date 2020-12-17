@@ -1,10 +1,10 @@
 <%= simple_form_for [@event,@event_atendees] do |f| %>
-  <% atendees_count = 0 %>
-  <% @event.event_atendees.each do |atendee| %>
-    <%= atendees_count += atendee.people  %>
-  <% end %>
-  <% n = @event.capacity - atendees_count%>
   <%= f.hidden_field :event_id, value: @event.id %>
-  <%= f.input :people, :label => "How many people?", input_html: {min: "0", step: "any"}, collection: (1..n) %>
-  <%= f.submit "Join", class: 'main-button' %>
+  <% if @count >= 1 %>
+    <%= f.input :people, :label => "How many people?", input_html: {min: "0", step: "any"}, collection: (1..@count) %>
+    <%= f.submit "Join", class: 'main-button' %>
+  <% else %>
+    <p>Sorry, but this event is full.</p>
+    <%= link_to 'See more events', events_path  %>
+  <% end %>
 <% end %>
