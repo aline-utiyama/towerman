@@ -36,7 +36,51 @@
 #event-date {
   background-color: #cf9d49;
   padding: 4px 10px;
-  font-size: 14px;
+  font-size: 15px;
   border-radius: 16px;
   color: #fff;
+}
+
+.my-events-cards {
+
+
+  a:hover {
+    text-decoration: none;
+
+  }
+}
+
+.my-events-card {
+  background-color: #fff;
+  padding: 32px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 24px 0;
+
+}
+
+.my-events-card:hover {
+  box-shadow: 0 2px 4px rgba(8,8,61,0.1);
+}
+
+.join-events-cards {
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.join-events-card {
+  background-color: #fff;
+  padding: 32px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin: 24px 0;
+}
+
+.join-events-card:hover {
+  box-shadow: 0 2px 4px rgba(8,8,61,0.1);
 }

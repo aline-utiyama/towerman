@@ -1,13 +1,18 @@
 <div class="container">
   <h1>My Events</h1>
-  <% @event_atendees.each do |event| %>
-    <% if event.user == current_user %>
-      <ul>
-        <li>
-          <%= event.user.username %>
-          <%= event.event.title %>
-        </li>
-      </ul>
+  <% @event_atendees.each do |atendee| %>
+    <% if atendee.user == current_user %>
+      <div class="join-events-cards">
+        <%= link_to event_path(atendee.event) do  %>
+          <div class="join-events-card">
+            <div>
+              <h5><%= atendee.event.title %></h5>
+              <p>Host: <%= atendee.event.user.username %></p>
+            </div>
+            <span id="event-date"><%= atendee.event.date_time.strftime("%b %y, %H:%M") %> </span>
+          </div>
+        <% end %>
+      </div>
     <% end %>
   <% end %>
 </div>

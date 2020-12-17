@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   resources :events do
     resources :event_atendees
   end
+
+  namespace :event do
+    get "event_atendees", to: "event_atendees#index", as: "event"
+  end
+
   resources :event_atendees
   resources :proffessionals
   resources :recycles

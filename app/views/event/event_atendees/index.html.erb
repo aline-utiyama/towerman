@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>My Events</h1>
+  <% @events.each do |event| %>
+    <div class="my-events-cards">
+      <% if event.user == current_user %>
+        <%= link_to event_path(event) do %>
+          <div class="my-events-card">
+            <h5><%= event.title %></h5>
+            <span id="event-date"><%= event.date_time.strftime("%b %y, %H:%M") %></span>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
