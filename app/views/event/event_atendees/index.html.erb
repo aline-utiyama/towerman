@@ -5,7 +5,14 @@
       <% if event.user == current_user %>
         <%= link_to event_path(event) do %>
           <div class="my-events-card">
-            <h5><%= event.title %></h5>
+            <div>
+              <h5><%= event.title %></h5>
+              <% atendee_count = 0 %>
+              <% event.event_atendees.each do |atendee| %>
+                <% atendee_count += atendee.people %>
+              <% end %>
+              <p><%= atendee_count %> people joining this event.</p>
+            </div>
             <span id="event-date"><%= event.date_time.strftime("%b %y, %H:%M") %></span>
           </div>
         <% end %>

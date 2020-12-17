@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>My Events</h1>
+  <h1>Joining Events</h1>
   <% @event_atendees.each do |atendee| %>
     <% if atendee.user == current_user %>
       <div class="join-events-cards">
@@ -8,6 +8,7 @@
             <div>
               <h5><%= atendee.event.title %></h5>
               <p>Host: <%= atendee.event.user.username %></p>
+              <p>People: <%= atendee.people %></p>
             </div>
             <span id="event-date"><%= atendee.event.date_time.strftime("%b %y, %H:%M") %> </span>
           </div>

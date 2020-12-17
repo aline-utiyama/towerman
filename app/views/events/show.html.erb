@@ -33,9 +33,21 @@
         <p class="content"><%= @event.details %></p>
       </div>
     </div>
-    <div class="join-event-form">
-      <h3>Join this event!</h3>
-      <%= render 'event_atendees/form' %>
+    <div>
+      <div class="join-event-form">
+        <h3>Join this event!</h3>
+        <%= render 'event_atendees/form' %>
+      </div>
+      <div class="joining-people">
+        <h5>How is Joining?</h5>
+        <% @event.event_atendees.each do |atendee| %>
+          <div class="d-flex align-items-center">
+            <%= image_tag "avatar", alt: "alttext" %>
+            <h5><%= atendee.user.username %></h5>
+            <span>+<%= atendee.people %></span>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
