@@ -13,10 +13,6 @@
         <%= link_to event_path(event) do  %>
           <div class="event-card">
             <div class="card-img">
-              <div class="spots-av">
-                <span><%= event.capacity - count %></span>
-                <p>spots</p>
-              </div>
               <% if event.photo.attached? %>
                 <%= cl_image_tag event.photo.key %>
               <% else %>
@@ -24,7 +20,13 @@
               <% end %>
             </div>
             <div class="card-content">
-              <span id="event-date"><%= event.date_time.strftime("%A, %b %y, %H:%M") %></span>
+              <div class="card-date-av">
+                <span id="event-date"><%= event.date_time.strftime("%A, %b %y, %H:%M") %></span>
+                <div class="spots-av">
+                  <span><%= event.capacity - count %></span>
+                  <p>spots</p>
+                </div>
+              </div>
               <h5 class="event-title"><%= event.title %></h5>
               <div class="user-event-info">
                 <div class="user-info-card no-margin card-info">
