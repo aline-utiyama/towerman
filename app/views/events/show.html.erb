@@ -14,7 +14,7 @@
       </div>
       <div class="host-capacity">
         <div class="event-host">
-          <%= image_tag "avatar", alt: "alttext", class: 'user-avatar' %>
+          <i class="fas fa-user-circle user-avatar"></i>
           <div>
             <p>Hosted by </p>
             <h5> <%= @event.user.username %></h5>
@@ -44,7 +44,7 @@
           <h5>Who is Joining?</h5>
           <% @event.event_atendees.each do |atendee| %>
             <div class="d-flex align-items-center">
-              <%= image_tag "avatar", alt: "alttext", class: 'user-avatar' %>
+              <i class="fas fa-user-circle user-avatar"></i>
               <h5><%= atendee.user.username %></h5>
               <div class="people-circle">
                 <p><%= atendee.people %></p>
