@@ -12,13 +12,29 @@
         <% end %>
         <%= link_to event_path(event) do  %>
           <div class="event-card">
-            <img src="https://image.freepik.com/free-vector/children-playground-concept_74855-7006.jpg" alt="">
+            <div class="card-img">
+              <div class="spots-av">
+                <span><%= event.capacity - count %></span>
+                <p>spots</p>
+              </div>
+              <img src="https://image.freepik.com/free-vector/children-playground-concept_74855-7006.jpg" alt="">
+            </div>
             <div class="card-content">
-              <span id="event-date"><%= event.date_time.strftime("%b %y, %H:%M") %></span>
+              <span id="event-date"><%= event.date_time.strftime("%A, %b %y, %H:%M") %></span>
               <h5 class="event-title"><%= event.title %></h5>
-              <li>Created by: <%= event.user.username %></li>
-              <li>Capacity: <%= event.capacity %> people</li>
-              <li><%= event.capacity - count %> seats available</li>
+              <div class="user-event-info">
+                <div class="user-info-card no-margin card-info">
+                  <%= image_tag "avatar", alt: "alttext", class: 'user-avatar' %>
+                  <div>
+                    <h6>Hosted by: </h6>
+                    <p> <%= event.user.username %></p>
+                  </div>
+                </div>
+                <div class="capacity-info no-margin card-info">
+                  <h6>Capacity:</h6>
+                  <p><%= event.capacity %> people</p>
+                </div>
+              </div>
             </div>
           </div>
         <% end %>
