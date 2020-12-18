@@ -10,7 +10,7 @@
               <p>Host: <%= atendee.event.user.username %></p>
               <p>People: <%= atendee.people %></p>
             </div>
-            <span id="event-date"><%= atendee.event.date_time.strftime("%b %y, %H:%M") %> </span>
+            <span id="event-date"><%= atendee.event.date_time.strftime("%A, %b %y, %H:%M") %> </span>
           </div>
         <% end %>
       </div>

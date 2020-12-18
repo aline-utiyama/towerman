@@ -2,6 +2,12 @@
   <% if current_user.event_atendees.exists?(event_id: @event) %>
     <p>Thanks for joining!</p>
   <% else %>
+    <% atendees_count = 0 %>
+    <% @atendees.each do |atendee| %>
+      <% atendees_count += atendee.people %>
+    <% end %>
+    <% spots_amount = @event.capacity - atendees_count %>
+    <p>There's <%= spots_amount %> spots left!</p>
     <%= f.hidden_field :event_id, value: @event.id %>
     <% if @count >= 1 %>
       <%= f.input :people, :label => "How many people?", include_blank: false, input_html: {min: "0", step: "any"}, collection: (1..@count) %>
