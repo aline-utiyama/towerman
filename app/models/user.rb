@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :events, through: :event_atendees
   has_many :event, dependent: :destroy
   has_many :event_atendees_as_event, through: :event, source: :event_atendees
+  has_many :event_atendees
 
   validates :username, uniqueness: true
   validates :username, length: { in: 6..30 }
