@@ -1,6 +1,10 @@
 <div class="container event-page">
   <div class="event-image">
-    <img src="https://image.freepik.com/free-vector/children-playground-concept_74855-7006.jpg" alt="">
+    <% if @event.photo.attached? %>
+      <%= cl_image_tag @event.photo.key %>
+    <% else %>
+      <img src="https://image.freepik.com/free-vector/children-playground-concept_74855-7006.jpg" alt="">
+    <% end %>
   </div>
   <div class="event-main">
     <div class="main-content">
