@@ -29,7 +29,7 @@
   }
 
   .card-content {
-    padding: 12px 24px 24px 24px;
+    padding: 12px 16px 20px 16px;;
   }
 }
 
@@ -39,6 +39,66 @@
   font-size: 15px;
   border-radius: 16px;
   color: #fff;
+}
+
+.card-img {
+  position: relative;
+}
+
+.spots-av {
+  background-color: red;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  position: absolute;
+  right: 20px;
+  top: 16px;
+
+  span {
+    color: #fff;
+    font-weight: 800;
+    line-height: 26px;
+  }
+
+  p {
+    margin: 0;
+    font-size: 10px;
+    color: #fff;
+    line-height: 0px;
+  }
+}
+
+.card-info {
+
+  p {
+    font-weight: bold;
+  }
+
+  h6 {
+    font-size: 12px;
+  }
+
+}
+
+.user-event-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-info-card {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 64px;
+  }
+}
+
+.capacity-info {
+  border-left: 1px solid #544f4f;
+  margin-left: 8px;
+  padding-left: 8px;
 }
 
 .my-events-cards {
