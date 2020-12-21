@@ -1,9 +1,7 @@
 class EventsController < ApplicationController
 
   def index
-    @events = policy_scope(Event).order(created_at: :desc)
-
-
+    @events = policy_scope(Event).order(date_time: :asc)
   end
 
   def show

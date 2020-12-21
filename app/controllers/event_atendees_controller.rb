@@ -1,6 +1,7 @@
 class EventAtendeesController < ApplicationController
   def index
-    @event_atendees = policy_scope(EventAtendee).order(created_at: :desc)
+    @event_atendees = policy_scope(EventAtendee)
+    #@event_ordered = @event_atendees.each.sort { |d| d.event.date_time }
   end
 
   def show

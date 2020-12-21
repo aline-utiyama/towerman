@@ -6,43 +6,45 @@
     </div>
     <div class="event-cards">
       <% @events.each do |event| %>
-        <% count = 0 %>
-        <% event.event_atendees.each do |atendee| %>
-          <% count += atendee.people %>
-        <% end %>
-        <%= link_to event_path(event) do  %>
-          <div class="event-card">
-            <div class="card-img">
-              <% if event.photo.attached? %>
-                <%= cl_image_tag event.photo.key %>
-              <% else %>
-                <img src="https://image.freepik.com/free-vector/children-playground-concept_74855-7006.jpg" alt="">
-              <% end %>
-            </div>
-            <div class="card-content">
-              <div class="card-date-av">
-                <span id="event-date"><%= event.date_time.strftime("%A, %b %y, %H:%M") %></span>
-                <div class="spots-av">
-                  <span><%= event.capacity - count %></span>
-                  <p>spots</p>
-                </div>
+        <% if event.date_time > Time.now %>
+          <% count = 0 %>
+          <% event.event_atendees.each do |atendee| %>
+            <% count += atendee.people %>
+          <% end %>
+          <%= link_to event_path(event) do  %>
+            <div class="event-card">
+              <div class="card-img">
+                <% if event.photo.attached? %>
+                  <%= cl_image_tag event.photo.key %>
+                <% else %>
+                  <img src="https://image.freepik.com/free-vector/children-playground-concept_74855-7006.jpg" alt="">
+                <% end %>
               </div>
-              <h5 class="event-title"><%= event.title %></h5>
-              <div class="user-event-info">
-                <div class="user-info-card no-margin card-info">
-                  <i class="fas fa-user-circle user-avatar"></i>
-                  <div>
-                    <h6>Hosted by: </h6>
-                    <p> <%= event.user.username %></p>
+              <div class="card-content">
+                <div class="card-date-av">
+                  <span id="event-date"><%= event.date_time.strftime("%A, %b %d, %H:%M") %></span>
+                  <div class="spots-av">
+                    <span><%= event.capacity - count %></span>
+                    <p>spots</p>
                   </div>
                 </div>
-                <div class="capacity-info no-margin card-info">
-                  <h6>Capacity:</h6>
-                  <p><%= event.capacity %> people</p>
+                <h5 class="event-title"><%= event.title %></h5>
+                <div class="user-event-info">
+                  <div class="user-info-card no-margin card-info">
+                    <i class="fas fa-user-circle user-avatar"></i>
+                    <div>
+                      <h6>Hosted by: </h6>
+                      <p> <%= event.user.username %></p>
+                    </div>
+                  </div>
+                  <div class="capacity-info no-margin card-info">
+                    <h6>Capacity:</h6>
+                    <p><%= event.capacity %> people</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
       <% end %>
     </div>
