@@ -10,10 +10,22 @@ h1, h2, h3, h4, h5, h6 {
 
 p, a {
   font-family: 'Open Sans', sans-serif;
+
+}
+
+p {
   color: #544f4f;
 }
 
+a {
+  color: #60b63e;
+  font-weight: bold;
+}
 
+a:hover {
+  color: #60b63e;
+  font-weight: bold;
+}
 
 #logo {
   font-family: 'Pacifico', cursive;
@@ -37,4 +49,9 @@ p, a {
 
   }
 
+}
+
+.signin-form {
+  width: 300px;
+  margin: 48px auto;
 }
