@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Joining Events</h1>
-  <% @event_atendees.each do |atendee| %>
+  <% @event_ordered.each do |atendee| %>
     <% if atendee.user == current_user %>
       <div class="join-events-cards">
         <%= link_to event_path(atendee.event) do  %>

@@ -10,5 +10,4 @@ class Event < ApplicationRecord
 
   n = 10
   CAPACITY = (1..n).to_a
-
 end
