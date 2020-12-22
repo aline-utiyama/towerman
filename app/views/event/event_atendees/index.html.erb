@@ -1,22 +1,15 @@
 <div class="container">
   <h1>My Events</h1>
-  <% @events.each do |event| %>
-    <div class="my-events-cards">
-      <% if event.user == current_user %>
-        <%= link_to event_path(event) do %>
-          <div class="my-events-card">
-            <div>
-              <h5><%= event.title %></h5>
-              <% atendee_count = 0 %>
-              <% event.event_atendees.each do |atendee| %>
-                <% atendee_count += atendee.people %>
-              <% end %>
-              <p><%= atendee_count %> people joining this event.</p>
-            </div>
-            <span id="event-date"><%= event.date_time.strftime("%b %d, %H:%M") %></span>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  <% end %>
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Upcomming Events</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Past Events</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"><%= render 'upcomming_events' %></div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><%= render 'past_events' %></div>
+  </div>
 </div>
