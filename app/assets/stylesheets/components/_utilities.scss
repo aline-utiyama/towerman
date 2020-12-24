@@ -1,6 +1,9 @@
 body {
   background-color: #ece1c84d;
   color: #595959;
+  display: flex;
+  flex-direction: column;
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -25,6 +28,10 @@ a {
 a:hover {
   color: #60b63e;
   font-weight: bold;
+}
+
+.main-container {
+  min-height: 62vh;
 }
 
 #logo {
