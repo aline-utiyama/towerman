@@ -20,3 +20,19 @@
 .nav-tabs .nav-link {
   color: #cf9e48;
 }
+
+@media (max-width: 768px)  {
+
+  .navbar-lewagon {
+    flex-wrap: nowrap;
+
+
+  }
+  .collapse:not(.show) {
+    display: initial;
+    }
+
+
+
+
+}
