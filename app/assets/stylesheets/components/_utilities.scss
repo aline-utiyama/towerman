@@ -1,6 +1,9 @@
 body {
   background-color: #ece1c84d;
   color: #595959;
+  display: flex;
+  flex-direction: column;
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -27,6 +30,11 @@ a:hover {
   font-weight: bold;
 }
 
+.main-container {
+  min-height: 62vh;
+  padding: 0px 0 62px 0;
+}
+
 #logo {
   font-family: 'Pacifico', cursive;
   //color: #d9a935;
@@ -51,11 +59,4 @@ a:hover {
 
 }
 
-.signin-form {
-  max-width: 364px;
-  margin: 48px auto;
-  background-color: #fff;
-  padding: 24px 32px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(8,8,61,0.1);
-}
+
