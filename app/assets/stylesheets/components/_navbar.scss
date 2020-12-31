@@ -30,6 +30,10 @@
   }
   .collapse:not(.show) {
     display: initial;
+    position: absolute;
+    right: 16px;
+    top: 20px;
+    z-index: 2;
     }
 
 
