@@ -7,6 +7,7 @@
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
   text-align: right;
+  margin-right: 12px;
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -23,6 +24,22 @@
 
 .only-mobile {
   display: none;
+}
+
+.nav-item i {
+  font-size: 40px;
+  color: #d6d5d5;
+
+}
+
+.nav-item.dropdown {
+  padding-left: 8px;
+}
+
+.dropdown-toggle:empty::after {
+    margin-left: 2px;
+    font-size: 18px;
+    margin-bottom: 5px;
 }
 
 @media (max-width: 767px)  {
@@ -43,8 +60,8 @@
   .navbar-nav .dropdown-menu {
     position: static;
     float: none;
-    margin-top: 22px;
-    margin-right: -16px;
+    margin-top: 20px;
+    margin-right: -28px;
     width: 100vw;
     height: 62vh;
     text-align: right;
