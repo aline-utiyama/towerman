@@ -1,7 +1,7 @@
 class Event < ApplicationRecord
   belongs_to :user
   has_many :event_atendees, dependent: :destroy
-  has_one_attached :photo
+  has_one_attached :photo, dependent: :destroy
 
   validates :title, :date_time, :details, presence: true
   validates :title, length: { in: 3..25 }

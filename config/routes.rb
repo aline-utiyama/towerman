@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   end
 
   resources :event_atendees
+
+  resources :users, only: [:show]
+
   resources :proffessionals
   resources :recycles
 end
