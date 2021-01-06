@@ -124,12 +124,39 @@
 
 .my-events-card {
   background-color: #fff;
-  padding: 32px;
+  //padding: 32px;
   border-radius: 8px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  //justify-content: space-between;
+  align-items: start;
   margin: 24px 0;
+  border: 1px solid #dee2e6;
+  height: 200px;
+
+  .event-card-img {
+    height: 100%;
+
+    img {
+      height: 100%;
+      border-radius: 8px 0 0 8px;
+      max-width: 280px;
+      object-fit: cover;
+    }
+  }
+
+  .event-content {
+    padding: 24px;
+
+    h4 {
+      padding-top: 8px;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0;
+      color: #544f4fa6;
+    }
+  }
 
 }
 
@@ -145,12 +172,40 @@
 
 .join-events-card {
   background-color: #fff;
-  padding: 32px;
+  //padding: 32px;
   border-radius: 8px;
   display: flex;
-  justify-content: space-between;
+  //justify-content: space-between;
   align-items: start;
   margin: 24px 0;
+  border: 1px solid #dee2e6;
+  height: 200px;
+
+
+  .event-card-img {
+    height: 100%;
+
+    img {
+      height: 100%;
+      border-radius: 8px 0 0 8px;
+      max-width: 280px;
+      object-fit: cover;
+    }
+  }
+
+  .event-content {
+    padding: 24px;
+
+    h4 {
+      padding-top: 8px;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0;
+      color: #544f4fa6;
+    }
+  }
 }
 
 .join-events-card:hover {
@@ -159,4 +214,13 @@
 
 .home-cards {
   padding: 62px;
+}
+
+.white-card {
+  margin: 48px auto;
+  background-color: #fff;
+  padding: 24px 32px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(8, 8, 61, 0.1);
+  min-height: 360px;
 }

@@ -4,15 +4,26 @@
       <% if event.user == current_user %>
         <%= link_to event_path(event) do %>
           <div class="my-events-card">
-            <div>
-              <h5><%= event.title %></h5>
+            <div class="event-card-img">
+              <% if event.photo.attached? %>
+                <%= cl_image_tag event.photo.key %>
+              <% else %>
+                <img src="https://image.freepik.com/free-vector/children-playground-concept_74855-7006.jpg" alt="">
+              <% end %>
+            </div>
+            <div class="event-content">
+              <span id="event-date"><%= event.date_time.strftime("%b %d, %H:%M") %></span>
+              <h4><%= event.title %></h4>
               <% atendee_count = 0 %>
               <% event.event_atendees.each do |atendee| %>
                 <% atendee_count += atendee.people %>
               <% end %>
-              <p><%= atendee_count %> people joining this event.</p>
+              <% if atendee_count > 1 %>
+                <p><%= atendee_count %> people joining</p>
+              <% else %>
+                <p><%= atendee_count %> joining</p>
+              <% end %>
             </div>
-            <span id="event-date"><%= event.date_time.strftime("%b %d, %H:%M") %></span>
           </div>
         <% end %>
       <% end %>
