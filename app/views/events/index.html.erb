@@ -31,7 +31,11 @@
                 <h5 class="event-title"><%= event.title %></h5>
                 <div class="user-event-info">
                   <div class="user-info-card no-margin card-info">
-                    <i class="fas fa-user-circle user-avatar"></i>
+                    <% if event.user.photo.attached? %>
+                      <%= cl_image_tag event.user.photo.key, height: 40, width: 40, crop: :fill %>
+                    <% else %>
+                      <i class="fas fa-user-circle user-avatar"></i>
+                    <% end %>
                     <div>
                       <h6>Hosted by: </h6>
                       <p> <%= event.user.username %></p>

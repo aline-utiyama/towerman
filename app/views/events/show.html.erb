@@ -14,7 +14,11 @@
       </div>
       <div class="host-capacity">
         <div class="event-host">
-          <i class="fas fa-user-circle user-avatar"></i>
+          <% if @event.user.photo.attached? %>
+            <%= cl_image_tag @event.user.photo.key, height: 40, width: 40, crop: :fill %>
+          <% else %>
+            <i class="fas fa-user-circle user-avatar"></i>
+          <% end %>
           <div>
             <p>Hosted by </p>
             <h5> <%= @event.user.username %></h5>
