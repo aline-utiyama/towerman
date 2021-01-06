@@ -48,7 +48,11 @@
           <h5>Who is Joining?</h5>
           <% @event.event_atendees.each do |atendee| %>
             <div class="d-flex align-items-center">
-              <i class="fas fa-user-circle user-avatar"></i>
+              <% if atendee.user.photo.attached? %>
+                <%= cl_image_tag atendee.user.photo.key, height: 40, width: 40, crop: :fill %>
+              <% else %>
+                <i class="fas fa-user-circle user-avatar"></i>
+              <% end %>
               <h5><%= atendee.user.username %></h5>
               <div class="people-circle">
                 <p><%= atendee.people %></p>
