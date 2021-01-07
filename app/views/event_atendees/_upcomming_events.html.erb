@@ -12,7 +12,7 @@
               <% end %>
             </div>
             <div class="event-content">
-              <span id="event-date"><%= atendee.event.date_time.strftime("%A, %b %d, %H:%M") %> </span>
+              <span id="event-date"><%= atendee.event.date_time.strftime("%b %d, %H:%M｜%A") %> </span>
               <h4><%= atendee.event.title %></h4>
               <p>Host: <%= atendee.event.user.username %></p>
               <% if atendee.people > 1 %>

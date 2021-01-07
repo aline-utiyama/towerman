@@ -3,7 +3,7 @@
     <div class="gradient">
       <div class="event-heading">
         <h2><%= @event.title %></h2>
-        <span id="event-date"><%= @event.date_time.strftime("%A, %B %d, %H:%M") %></span>
+        <span id="event-date"><%= @event.date_time.strftime("%b %d, %H:%M｜%A") %></span>
       </div>
     </div>
     <% if @event.photo.attached? %>

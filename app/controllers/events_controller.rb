@@ -29,6 +29,31 @@ class EventsController < ApplicationController
     end
   end
 
+  def edit
+    @event = Event.find(params[:id])
+    authorize @event
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    authorize @event
+    if @event.update(event_params)
+      redirect_to event_path(@event)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    authorize @event
+
+    @event.destroy
+    flash[:notice] = "Event successfully destroyed"
+    redirect_to(:action => 'index')
+
+  end
+
   def event_availability
     @event = Event.find(params[:id])
     @atendees = EventAtendee.where(event_id: params[:id])
