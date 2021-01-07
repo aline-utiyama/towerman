@@ -30,6 +30,16 @@ class EventAtendeesController < ApplicationController
     end
   end
 
+  def destroy
+    @event_atendee = EventAtendee.find(params[:id])
+    authorize @event_atendee
+    @event_atendee.destroy
+
+    flash[:notice] = "Event successfully destroyed"
+    redirect_to event_atendees_path
+
+  end
+
   private
 
   def event_atendee_params

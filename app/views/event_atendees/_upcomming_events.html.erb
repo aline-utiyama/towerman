@@ -2,7 +2,7 @@
   <% if atendee.event.date_time >= Time.now %>
     <% if atendee.user == current_user %>
       <div class="join-events-cards">
-        <%= link_to event_path(atendee.event) do  %>
+        <%#= link_to event_path(atendee.event) do  %>
           <div class="join-events-card">
             <div class="event-card-img">
               <% if atendee.event.photo.attached? %>
@@ -21,9 +21,12 @@
                 <p><%= atendee.people %> joining</p>
               <% end %>
             </div>
+            <div>
+              <%= link_to "Cancel", event_atendee_path(atendee), data: { confirm: "Are you sure?" }, method: :delete %>
+            </div>
           </div>
-        <% end %>
-      </div>
+          <%# end %>
+        </div>
+      <% end %>
     <% end %>
   <% end %>
-<% end %>

@@ -1,13 +1,15 @@
 <div class="container">
-  <h2>Update Event</h2>
-  <%= simple_form_for @event do |f| %>
-    <%= f.input :title %>
-    <%= f.input :date_time, html5: true %>
-    <%= f.input :photo, as: :file %>
-    <%= f.input :location, :label => "Meeting Spot" %>
-    <%= f.input :duration %>
-    <%= f.input :details %>
-    <%= f.input :capacity %>
-    <%= f.submit class: 'main-button'%>
-  <% end %>
+  <div class="update-form">
+    <h2>Update Event</h2>
+    <%= simple_form_for @event do |f| %>
+      <%= f.input :title %>
+      <%= f.input :date_time, html5: true %>
+      <%= f.input :photo, as: :file %>
+      <%= f.input :location, :label => "Meeting Spot" %>
+      <%= f.input :duration %>
+      <%= f.input :details %>
+      <%= f.input :capacity %>
+      <%= f.submit class: 'main-button'%>
+    <% end %>
+  </div>
 </div>
