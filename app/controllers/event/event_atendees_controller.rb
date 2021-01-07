@@ -6,4 +6,6 @@ class Event::EventAtendeesController < ApplicationController
     @event_atendee = policy_scope(EventAtendee)
     @events = policy_scope(Event).order(date_time: :asc)
   end
+
+
 end

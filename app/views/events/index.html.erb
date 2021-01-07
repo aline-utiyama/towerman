@@ -14,6 +14,8 @@
           <%= link_to event_path(event) do  %>
             <div class="event-card">
               <div class="card-img">
+                <div class="gradient"></div>
+                <span id="event-date"><%= event.date_time.strftime("%b %d, %H:%M｜%A") %></span>
                 <% if event.photo.attached? %>
                   <%= cl_image_tag event.photo.key %>
                 <% else %>
@@ -22,7 +24,7 @@
               </div>
               <div class="card-content">
                 <div class="card-date-av">
-                  <span id="event-date"><%= event.date_time.strftime("%A, %b %d, %H:%M") %></span>
+                  <!-- <span id="event-date"><%#= event.date_time.strftime("%A, %b %d, %H:%M") %></span> -->
                   <div class="spots-av">
                     <span><%= event.capacity - count %></span>
                     <p>spots</p>

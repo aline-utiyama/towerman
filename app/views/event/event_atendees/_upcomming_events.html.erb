@@ -2,17 +2,17 @@
   <% if event.date_time >= Time.now %>
     <div class="my-events-cards">
       <% if event.user == current_user %>
-        <%= link_to event_path(event) do %>
-          <div class="my-events-card">
-            <div class="event-card-img">
-              <% if event.photo.attached? %>
-                <%= cl_image_tag event.photo.key %>
-              <% else %>
-                <img src="https://image.freepik.com/free-vector/children-playground-concept_74855-7006.jpg" alt="">
-              <% end %>
-            </div>
-            <div class="event-content">
-              <span id="event-date"><%= event.date_time.strftime("%b %d, %H:%M") %></span>
+        <div class="my-events-card">
+          <div class="event-card-img">
+            <% if event.photo.attached? %>
+              <%= cl_image_tag event.photo.key %>
+            <% else %>
+              <img src="https://image.freepik.com/free-vector/children-playground-concept_74855-7006.jpg" alt="">
+            <% end %>
+          </div>
+          <div class="event-content">
+            <%= link_to event_path(event) do  %>
+              <span id="event-date"><%= event.date_time.strftime("%b %d, %H:%M｜%A") %></span>
               <h4><%= event.title %></h4>
               <% atendee_count = 0 %>
               <% event.event_atendees.each do |atendee| %>
@@ -23,9 +23,13 @@
               <% else %>
                 <p><%= atendee_count %> joining</p>
               <% end %>
-            </div>
+            <% end %>
           </div>
-        <% end %>
+          <div class="buttons">
+            <%= link_to 'Edit Event', edit_event_path(event), class: 'main-button'  %>
+            <%= link_to 'Cancel Event', event_path(event), data: { confirm: "Are you sure?" }, method: :delete, class: 'cancel-button' %>
+          </div>
+        </div>
       <% end %>
     </div>
   <% end %>
