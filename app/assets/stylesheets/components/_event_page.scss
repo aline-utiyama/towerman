@@ -43,7 +43,7 @@
   //padding: 16px 0;
   //margin: 48px auto;
   background-color: #fff;
-  padding: 24px 32px;
+  padding: 32px;
   border-radius: 0 0 8px 8px;
   box-shadow: 0 2px 4px rgba(8, 8, 61, 0.1);
   min-height: 360px;
@@ -51,7 +51,7 @@
 
   .main-content {
     flex-grow: 1;
-    padding: 8px 72px 16px 0;
+    padding: 16px 72px 0 0;
   }
 
   .join-event-form {
@@ -60,6 +60,10 @@
     border-radius: 8px;
     width: 300px;
     box-shadow: 0 2px 4px rgba(8, 8, 61, 0.1);
+
+    .main-button {
+      width: 100%;
+    }
   }
 }
 
@@ -109,7 +113,7 @@
 }
 
 .event-details {
-  padding: 24px 0;
+  padding-top: 24px;
 
   .content {
     background-color: #fff;
@@ -131,8 +135,21 @@
   }
 
   .info {
-    //display: flex;
-    //align-items: center;
+
+    h6{
+      color: #6a6565;
+      margin: 0;
+      font-size: 14px;
+    }
+
+    p {
+      font-weight: bold;
+    }
+
+    h5 {
+      font-weight: 700;
+    }
+
   }
 }
 
