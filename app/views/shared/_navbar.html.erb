@@ -26,6 +26,7 @@
             <%= link_to "Joining", event_atendees_path, class: "dropdown-item" %>
             <%= link_to "Created", event_event_path, class: "dropdown-item" %>
             <%= link_to "Add New Event", new_event_path, class: "dropdown-item" %>
+            <%= link_to "My Profile", user_path(current_user), class: "dropdown-item" %>
             <%= link_to "Update Account", edit_user_registration_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
