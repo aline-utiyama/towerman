@@ -18,9 +18,9 @@
               <h4><%= atendee.event.title %></h4>
               <p>Host: <%= atendee.event.user.username %></p>
               <% if atendee.people > 1 %>
-                <p><%= atendee.people %> people joining</p>
+                <p><%= atendee.people %> seats</p>
               <% else %>
-                <p><%= atendee.people %> joining</p>
+                <p><%= atendee.people %> seat</p>
               <% end %>
             <% end %>
           </div>
