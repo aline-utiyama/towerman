@@ -20,14 +20,18 @@
       </div> -->
       <div class="host-capacity">
         <div class="event-host">
-          <% if @event.user.photo.attached? %>
-            <%= cl_image_tag @event.user.photo.key, height: 40, width: 40, crop: :fill %>
-          <% else %>
-            <i class="fas fa-user-circle user-avatar"></i>
+          <%= link_to user_path(@event.user) do  %>
+            <% if @event.user.photo.attached? %>
+              <%= cl_image_tag @event.user.photo.key, height: 40, width: 40, crop: :fill %>
+            <% else %>
+              <i class="fas fa-user-circle user-avatar"></i>
+            <% end %>
           <% end %>
           <div>
             <p>Hosted by </p>
-            <h5> <%= @event.user.username %></h5>
+            <%= link_to user_path(@event.user) do  %>
+              <h5> <%= @event.user.username %></h5>
+            <% end %>
           </div>
         </div>
         <div class="event-capacity">
@@ -57,15 +61,19 @@
       </div>
       <div class="joining-people">
         <% if @event.event_atendees.count >= 1 %>
-          <h5>Who is Joining?</h5>
+          <h4>Who is Joining?</h4>
           <% @event.event_atendees.each do |atendee| %>
             <div class="d-flex align-items-center">
-              <% if atendee.user.photo.attached? %>
-                <%= cl_image_tag atendee.user.photo.key, height: 40, width: 40, crop: :fill %>
-              <% else %>
-                <i class="fas fa-user-circle user-avatar"></i>
+              <%= link_to user_path(atendee.user) do  %>
+                <% if atendee.user.photo.attached? %>
+                  <%= cl_image_tag atendee.user.photo.key, height: 40, width: 40, crop: :fill %>
+                <% else %>
+                  <i class="fas fa-user-circle user-avatar"></i>
+                <% end %>
               <% end %>
-              <h5><%= atendee.user.username %></h5>
+              <%= link_to user_path(atendee.user) do  %>
+                <h5><%= atendee.user.username %></h5>
+              <% end %>
               <% if atendee.people > 1 %>
                 <div class="people-circle">
                   <p>+<%= atendee.people - 1 %></p>

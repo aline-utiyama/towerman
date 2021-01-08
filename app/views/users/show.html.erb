@@ -1,1 +1,18 @@
-<h3>My Profile</h3>
+<div class="container">
+  <div class="white-card user-card">
+    <div class="user-info">
+      <% if @user.photo.attached? %>
+        <%= cl_image_tag @user.photo.key, height: 180, width: 180, crop: :fill %>
+      <% else %>
+        <i class="fas fa-user-circle user-avatar"></i>
+      <% end %>
+      <h5><%= @user.username %></h5>
+    </div>
+    <div class="user-bio">
+      <h5 class="bio">Bio:</h5>
+      <div class="bio-card">
+        <%= @user.bio %>
+      </div>
+    </div>
+  </div>
+</div>
