@@ -39,6 +39,8 @@
       <div class="event-details">
         <div class="info">
           <!-- <span class="info-icon"><i class="fas fa-info"></i></span> -->
+          <h6>Starts at: </h6>
+          <p><%= @event.date_time.strftime("%H:%M") %></p>
           <h6>Duration: </h6>
           <p><%= @event.duration %></p>
           <h6>Meeting Spot: </h6>
@@ -64,9 +66,11 @@
                 <i class="fas fa-user-circle user-avatar"></i>
               <% end %>
               <h5><%= atendee.user.username %></h5>
-              <div class="people-circle">
-                <p><%= atendee.people %></p>
-              </div>
+              <% if atendee.people > 1 %>
+                <div class="people-circle">
+                  <p>+<%= atendee.people - 1 %></p>
+                </div>
+              <% end %>
             </div>
           <% end %>
         <% end %>

@@ -2,31 +2,36 @@
   <% if atendee.event.date_time >= Time.now %>
     <% if atendee.user == current_user %>
       <div class="join-events-cards">
-        <%#= link_to event_path(atendee.event) do  %>
-          <div class="join-events-card">
-            <div class="event-card-img">
+        <div class="join-events-card">
+          <div class="event-card-img">
+            <%= link_to event_path(atendee.event) do  %>
               <% if atendee.event.photo.attached? %>
                 <%= cl_image_tag atendee.event.photo.key %>
               <% else %>
                 <img src="https://image.freepik.com/free-vector/children-playground-concept_74855-7006.jpg" alt="">
               <% end %>
-            </div>
-            <div class="event-content">
+            <% end %>
+          </div>
+          <div class="event-content">
+            <%= link_to event_path(atendee.event) do  %>
               <span id="event-date"><%= atendee.event.date_time.strftime("%b %d, %H:%M｜%A") %> </span>
               <h4><%= atendee.event.title %></h4>
               <p>Host: <%= atendee.event.user.username %></p>
               <% if atendee.people > 1 %>
-                <p><%= atendee.people %> people joining</p>
+                <p><%= atendee.people %> seats</p>
               <% else %>
-                <p><%= atendee.people %> joining</p>
+                <p><%= atendee.people %> seat</p>
               <% end %>
-            </div>
-            <div>
-              <%= link_to "Cancel", event_atendee_path(atendee), data: { confirm: "Are you sure?" }, method: :delete %>
-            </div>
+            <% end %>
           </div>
-          <%# end %>
+          <div class="buttons">
+            <%= link_to event_atendee_path(atendee), data: { confirm: "Are you sure?" }, method: :delete, class: 'cancel-button' do %>
+              <i class="fas fa-times"></i>
+              <p> Cancel</p>
+            <% end %>
+          </div>
         </div>
-      <% end %>
+      </div>
     <% end %>
   <% end %>
+<% end %>
