@@ -40,6 +40,11 @@
 
 }
 
+.menu-col {
+  border-top: 1px solid #d3d0ca;
+  padding: 8px 0;
+}
+
 .nav-item.dropdown {
   padding-left: 8px;
 }
@@ -52,6 +57,11 @@
 
 .navbar-nav .dropdown-menu {
   text-align: right;
+
+}
+
+.dropdown-menu {
+  min-width: 230px;
 
 }
 
