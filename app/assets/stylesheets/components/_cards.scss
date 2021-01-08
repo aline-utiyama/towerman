@@ -186,10 +186,15 @@
     .cancel-button {
       color: #d51419ab;
       padding: 8px 0;
+      display: flex;
+      align-items: center;
 
+      p {
+        margin: 0 0 0 4px;
+
+      }
     }
   }
-
 }
 
 .my-events-card:hover {
@@ -227,6 +232,7 @@
 
   .event-content {
     padding: 24px;
+    flex-grow: 1;
 
     h4 {
       padding-top: 8px;
@@ -236,6 +242,25 @@
     p {
       margin: 0;
       color: #544f4fa6;
+    }
+  }
+
+  .buttons {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    .cancel-button {
+      color: #d51419ab;
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+
+      p {
+        margin: 0 0 0 4px;
+
+      }
     }
   }
 }

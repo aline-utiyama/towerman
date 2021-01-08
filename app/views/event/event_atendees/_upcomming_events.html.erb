@@ -27,7 +27,11 @@
           </div>
           <div class="buttons">
             <%= link_to 'Edit Event', edit_event_path(event), class: 'main-button'  %>
-            <%= link_to 'Cancel Event', event_path(event), data: { confirm: "Are you sure?" }, method: :delete, class: 'cancel-button' %>
+            <%#= link_to 'Cancel Event', event_path(event), data: { confirm: "Are you sure?" }, method: :delete, class: 'cancel-button' %>
+            <%= link_to event_path(event), data: { confirm: "Are you sure?" }, method: :delete, class: 'cancel-button' do %>
+              <i class="fas fa-times"></i>
+              <p> Cancel</p>
+            <% end %>
           </div>
         </div>
       <% end %>
