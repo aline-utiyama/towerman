@@ -1,3 +1,7 @@
+.event-page {
+  padding: 0 8px;
+}
+
 .user-avatar {
   font-size: 40px;
   color: #544f4f3d;
@@ -44,6 +48,7 @@
 .event-main {
   display: flex;
   align-items: start;
+  flex-wrap: wrap;
   //padding: 16px 0;
   //margin: 48px auto;
   background-color: #fff;
@@ -54,7 +59,7 @@
 
 
   .main-content {
-    flex-grow: 1;
+    flex-grow: 3;
     padding: 16px 72px 0 0;
   }
 
@@ -62,7 +67,7 @@
     background-color: #fff;
     padding: 24px;
     border-radius: 8px;
-    width: 300px;
+    width: 100%;
     box-shadow: 0 2px 4px rgba(8, 8, 61, 0.1);
 
     .main-button {
@@ -162,6 +167,7 @@
 }
 
 .join-form-container {
+  flex-grow: 1;
   padding-top: 8px;
 }
 
@@ -197,5 +203,22 @@
     }
   }
 
+
+}
+
+@media (max-width: 767px) {
+  .event-main .main-content {
+    padding: 0;
+    margin: 4px;
+
+  }
+
+  .join-form-container {
+    padding-top: 48px;
+  }
+
+  .event-image img {
+    height: 240px;
+  }
 
 }

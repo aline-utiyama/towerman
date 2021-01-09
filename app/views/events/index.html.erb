@@ -1,8 +1,9 @@
 <div class="container">
   <div>
     <div class="events-heading">
-      <h1>Upcoming Events</h1>
-      <%= link_to "Add New Event", new_event_path, class: 'main-button'  %>
+      <h2>Upcoming Events</h2>
+      <%= link_to "Add New Event", new_event_path, class: 'main-button hidden-mobile'  %>
+      <%= link_to "+", new_event_path, class: 'main-button only-mobile'  %>
     </div>
     <div class="event-cards">
       <% @events.each do |event| %>
