@@ -127,6 +127,8 @@
 
 .event-details {
   padding-top: 24px;
+  max-width: 520px;
+
 
   .content {
     background-color: #fff;
@@ -206,10 +208,14 @@
 
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991.98px) {
   .event-main .main-content {
     padding: 0;
     margin: 4px;
+
+    .event-details {
+      max-width: none;
+    }
 
   }
 
@@ -222,3 +228,5 @@
   }
 
 }
+
+
