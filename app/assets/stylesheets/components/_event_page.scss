@@ -1,3 +1,7 @@
+.event-page {
+  padding: 0 8px;
+}
+
 .user-avatar {
   font-size: 40px;
   color: #544f4f3d;
@@ -205,10 +209,16 @@
 @media (max-width: 767px) {
   .event-main .main-content {
     padding: 0;
+    margin: 4px;
+
   }
 
   .join-form-container {
     padding-top: 48px;
+  }
+
+  .event-image img {
+    height: 240px;
   }
 
 }
