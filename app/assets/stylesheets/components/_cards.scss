@@ -187,13 +187,23 @@
 
     .cancel-button {
       color: #d51419ab;
-      padding: 8px 0;
+      padding: 8px 0 8px 16px;
       display: flex;
       align-items: center;
 
       p {
         margin: 0 0 0 4px;
 
+      }
+    }
+
+    .edit-button {
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+
+      p {
+        margin: 0 0 0 4px;
       }
     }
   }
@@ -323,6 +333,10 @@
   .join-events-card {
     flex-wrap: wrap;
     height: auto;
+
+    .buttons {
+      padding: 0 24px 24px 24px;
+    }
   }
 
   .join-events-card .event-card-img {
@@ -336,6 +350,7 @@
       border-radius: 8px 8px 0 0;
 
     }
+
   }
 
   .my-events-card {
@@ -353,5 +368,10 @@
       max-width: none;
       border-radius: 8px 8px 0 0;
     }
+  }
+
+  .my-events-card .buttons {
+    flex-direction: row;
+    padding: 0 24px 24px 24px;
   }
 }
