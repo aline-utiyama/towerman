@@ -1,67 +1,37 @@
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
-    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
-    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="https://image.freepik.com/free-vector/children-playground-concept_74855-7006.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="https://image.freepik.com/free-vector/children-playground-concept_74855-7006.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="https://image.freepik.com/free-vector/children-playground-concept_74855-7006.jpg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-      </div>
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </a>
-</div>
+<img src="<%= image_path("main_banner.png") %>" class="d-block w-100" alt="...">
 <div class="container">
+  <h2 class="home-cards-title"><i class="fas fa-search"></i>Everyday a new discovery</h2>
   <div class="row home-cards">
     <div class="col-sm-4">
-      <div class="card">
+      <div class="card first-card">
         <div class="card-body">
-          <h5 class="card-title">Join Events</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="/events" class="main-button">Join</a>
+          <%= link_to events_path do  %>
+            <h3 class="card-title">Join <br>
+              Events</h3>
+            <p>Learn More</p>
+          <% end %>
         </div>
       </div>
     </div>
     <div class="col-sm-4">
-      <div class="card">
+      <div class="card seccont-card">
         <div class="card-body">
-          <h5 class="card-title">Find Professionals</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="main-button">Find</a>
+          <%= link_to events_path do  %>
+            <h3 class="card-title">Find <br>
+              Professionals</h3>
+            <p>Learn More</p>
+          <% end %>
         </div>
       </div>
     </div>
     <div class="col-sm-4">
-      <div class="card">
+      <div class="card third-card">
         <div class="card-body">
-          <h5 class="card-title">Exchange information</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="main-button">Particiapate</a>
+          <%= link_to events_path do  %>
+            <h3 class="card-title">Exchange <br>
+              Information</h3>
+            <p>Learn More</p>
+          <% end %>
         </div>
       </div>
     </div>

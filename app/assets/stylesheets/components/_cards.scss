@@ -281,8 +281,32 @@
   box-shadow: 0 2px 4px rgba(8,8,61,0.1);
 }
 
+.home-cards-title {
+  text-align: center;
+  padding-top: 48px;
+}
+
 .home-cards {
   padding: 62px;
+
+  .card {
+    background-image: linear-gradient(to bottom right, #1C8C6A, #44BE92);
+    border-radius: 8px;
+    padding: 32px 24px;
+    text-align: center;
+
+    h3 {
+      color: #fff;
+    }
+
+    p {
+      color: #033a29;
+    }
+  }
+
+  .card:hover {
+    background-image: linear-gradient(to bottom right, #1C8C6A, #1C8C6A);
+  }
 }
 
 .white-card {
