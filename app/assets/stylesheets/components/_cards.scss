@@ -337,4 +337,21 @@
 
     }
   }
+
+  .my-events-card {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .my-events-card .event-card-img {
+    width: 100%;
+    height: auto;
+
+    img {
+      width: 100%;
+      height: auto;
+      max-width: none;
+      border-radius: 8px 8px 0 0;
+    }
+  }
 }
