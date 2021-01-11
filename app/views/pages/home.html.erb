@@ -1,6 +1,10 @@
-<img src="<%= image_path("main_banner.png") %>" class="d-block w-100" alt="...">
+<div class="main-banner">
+  <div class="container">
+    <img src="<%= image_path("main_banner.png") %>" class="d-block w-100" alt="...">
+  </div>
+</div>
 <div class="container">
-  <h2 class="home-cards-title"><i class="fas fa-search"></i>Everyday a new discovery</h2>
+  <h3 class="home-cards-title"><i class="fas fa-search"></i>Everyday a new discovery</h3>
   <div class="row home-cards">
     <div class="col-sm-4">
       <div class="card first-card">
@@ -8,7 +12,7 @@
           <%= link_to events_path do  %>
             <h3 class="card-title">Join <br>
               Events</h3>
-            <p>Learn More</p>
+            <p>Learn More <i class="fas fa-angle-right"></i></p>
           <% end %>
         </div>
       </div>
@@ -19,7 +23,7 @@
           <%= link_to events_path do  %>
             <h3 class="card-title">Find <br>
               Professionals</h3>
-            <p>Learn More</p>
+            <p>Learn More <i class="fas fa-angle-right"></i></p>
           <% end %>
         </div>
       </div>
@@ -30,7 +34,7 @@
           <%= link_to events_path do  %>
             <h3 class="card-title">Exchange <br>
               Information</h3>
-            <p>Learn More</p>
+            <p>Learn More <i class="fas fa-angle-right"></i></p>
           <% end %>
         </div>
       </div>
