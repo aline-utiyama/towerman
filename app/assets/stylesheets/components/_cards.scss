@@ -281,8 +281,37 @@
   box-shadow: 0 2px 4px rgba(8,8,61,0.1);
 }
 
+.home-cards-title {
+  text-align: center;
+  padding-top: 48px;
+
+  i {
+    padding: 0px 4px;
+  }
+}
+
 .home-cards {
   padding: 62px;
+
+  .card {
+    background-image: linear-gradient(to bottom right, #1C8C6A, #44BE92);
+    border-radius: 8px;
+    padding: 24px;
+    text-align: left;
+
+    h3 {
+      color: #fff;
+    }
+
+    p {
+      color: #033a29;
+      margin: 0;
+    }
+  }
+
+  .card:hover {
+    background-image: linear-gradient(to bottom right, #1C8C6A, #1C8C6A);
+  }
 }
 
 .white-card {
@@ -294,7 +323,7 @@
   min-height: 360px;
 }
 
-@media (max-width: 280px) {
+@media (max-width: 319px) {
   #logo {
     font-size: 32px;
   }
@@ -320,6 +349,10 @@
     img {
       height: 160px;
     }
+  }
+
+  .main-container {
+    padding: 72px 0 62px 0;
   }
 }
 
@@ -373,5 +406,27 @@
   .my-events-card .buttons {
     flex-direction: row;
     padding: 0 24px 24px 24px;
+  }
+
+  .home-cards {
+    padding: 0;
+
+    .card {
+      padding: 0;
+      margin: 16px;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .home-cards {
+
+    .card {
+      padding: 0;
+
+      h3 {
+        font-size: 22px;
+      }
+    }
   }
 }
