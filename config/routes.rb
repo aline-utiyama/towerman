@@ -14,6 +14,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
 
-  resources :proffessionals
+  resources :professionals
   resources :recycles
 end

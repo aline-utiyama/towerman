@@ -29,6 +29,11 @@
             <div class="menu-col">
               <%= link_to "My Profile", user_path(current_user), class: "dropdown-item line-top" %>
               <%= link_to "Update Account", edit_user_registration_path, class: "dropdown-item" %>
+              <% if current_user.professional %>
+                <%= link_to "Edit Professional Profile", edit_professional_path(current_user) %>
+              <% else %>
+                <%= link_to "Add Professional Profile", new_professional_path, class: "dropdown-item"  %>
+              <% end %>
             </div>
             <div class="menu-col">
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item line-top" %>
