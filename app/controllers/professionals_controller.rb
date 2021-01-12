@@ -16,6 +16,7 @@ class ProfessionalsController < ApplicationController
   def create
     @professional = Professional.new(professional_params)
     @professional.user = current_user
+    authorize @professional
 
     if @professional.save
       redirect_to professional_path(@professional)
