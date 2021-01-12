@@ -1,6 +1,7 @@
 <div class="container">
   <h3>Add Your Professional Profile</h3>
   <%= simple_form_for @professional do |f| %>
+    <%= f.input :photo, as: :file, :label => "Image" %>
     <%= f.input :full_name %>
     <%= f.input :role %>
     <%= f.input :details %>

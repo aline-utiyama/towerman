@@ -6,7 +6,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable, authentication_keys: [:login]
 
-  has_many :professionals, dependent: :destroy
+  has_one :professional, dependent: :destroy
   has_many :recycles, dependent: :destroy
   has_many :events, dependent: :destroy
   has_many :events, through: :event_atendees

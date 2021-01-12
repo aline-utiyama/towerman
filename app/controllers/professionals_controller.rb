@@ -6,6 +6,7 @@ class ProfessionalsController < ApplicationController
 
   def show
     @professional = Professional.find(params[:id])
+    authorize @professional
   end
 
   def new
@@ -28,7 +29,7 @@ class ProfessionalsController < ApplicationController
   private
 
   def professional_params
-    params.require(:professional).permit(:full_name, :role, :details, :price, :email, :phone, :address)
+    params.require(:professional).permit(:full_name, :role, :details, :price, :email, :phone, :address, :photo)
   end
 
 end
