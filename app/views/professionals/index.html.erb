@@ -1,16 +1,18 @@
 <div class="container">
   <h1>Find Professionals</h1>
   <div class="professional-cards">
-    <div class="professional-card">
-      <% @professionals.each do |professional| %>
+    <% @professionals.each do |professional| %>
+      <div class="professional-card">
         <% if professional.photo.attached? %>
           <%= cl_image_tag professional.photo.key %>
         <% else %>
           <i class="fas fa-user-circle user-avatar"></i>
         <% end %>
-        <%= professional.full_name %>
-        <%= professional.role %>
-      <% end %>
-    </div>
+        <div class="professional-info">
+          <p><%= professional.full_name %></p>
+          <p><%= professional.role %></p>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

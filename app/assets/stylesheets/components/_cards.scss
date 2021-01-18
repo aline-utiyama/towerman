@@ -430,3 +430,36 @@
     }
   }
 }
+
+// Professionals cards
+
+.professional-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-gap: 16px;
+  padding-bottom: 62px;
+}
+
+.professional-card {
+  background-color: #fff;
+  min-width: 280px;
+  margin: 16px auto;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 4px rgba(8,8,61,0.1);
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  img {
+    border-radius: 50%;
+    width: 132px;
+  }
+
+  i {
+    font-size: 132px;
+    color: #dcdcdc7a;
+  }
+}
