@@ -1,1 +1,16 @@
-<h1>Find Professionals</h1>
+<div class="container">
+  <h1>Find Professionals</h1>
+  <div class="professional-cards">
+    <div class="professional-card">
+      <% @professionals.each do |professional| %>
+        <% if professional.photo.attached? %>
+          <%= cl_image_tag professional.photo.key %>
+        <% else %>
+          <i class="fas fa-user-circle user-avatar"></i>
+        <% end %>
+        <%= professional.full_name %>
+        <%= professional.role %>
+      <% end %>
+    </div>
+  </div>
+</div>
