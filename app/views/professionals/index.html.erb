@@ -2,17 +2,19 @@
   <h1>Find Professionals</h1>
   <div class="professional-cards">
     <% @professionals.each do |professional| %>
-      <div class="professional-card">
-        <% if professional.photo.attached? %>
-          <%= cl_image_tag professional.photo.key %>
-        <% else %>
-          <i class="fas fa-user-circle user-avatar"></i>
-        <% end %>
-        <div class="professional-info">
-          <p><%= professional.full_name %></p>
-          <p><%= professional.role %></p>
+      <%= link_to professional_path(professional) do  %>
+        <div class="professional-card">
+          <% if professional.photo.attached? %>
+            <%= cl_image_tag professional.photo.key %>
+          <% else %>
+            <i class="fas fa-user-circle user-avatar"></i>
+          <% end %>
+          <div class="professional-info">
+            <p><%= professional.full_name %></p>
+            <p><%= professional.role %></p>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>

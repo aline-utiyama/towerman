@@ -442,12 +442,12 @@
 
 .professional-card {
   background-color: #fff;
-  min-width: 280px;
+  max-width: 300px;
   margin: 16px auto;
   border-radius: 8px;
-  padding: 24px;
+  padding: 32px 24px;
   box-shadow: 0 2px 4px rgba(8,8,61,0.1);
-  height: 300px;
+  height: 320px;
   display: flex;
   flex-direction: column;
   align-items: center;
