@@ -463,3 +463,39 @@
     color: #dcdcdc7a;
   }
 }
+
+.professional-main-info {
+  display: flex;
+  align-items: center;
+}
+
+.prof-img {
+  i {
+     font-size: 132px;
+  }
+
+  img {
+    width: 132px;
+    border-radius: 50%;
+  }
+}
+
+.prof-name-role {
+  padding-left: 18px;
+}
+
+.professional-details {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+
+  div {
+    padding: 0 16px;
+  }
+}
+
+.professional-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

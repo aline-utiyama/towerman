@@ -1,15 +1,27 @@
 <div class="container">
-  <div class="white-card">
-    <% if @professional.photo.attached? %>
-      <%= cl_image_tag @professional.photo.key %>
-    <% else %>
-      <i class="fas fa-user-circle user-avatar"></i>
-    <% end %>
-    <h3><%= @professional.full_name %></h3>
-    <p>Role: <%= @professional.role %></p>
-    <p>Price: <%= @professional.price %></p>
-    <p>Phone: <%= @professional.phone %></p>
-    <p>Email: <%= @professional.email %></p>
-    <p>Address:<%= @professional.address %></p>
+  <div class="white-card professional-page">
+    <div class="professional-main-info">
+      <div class="prof-img">
+        <% if @professional.photo.attached? %>
+          <%= cl_image_tag @professional.photo.key %>
+        <% else %>
+          <i class="fas fa-user-circle user-avatar"></i>
+        <% end %>
+      </div>
+      <div class="prof-name-role">
+        <h3><%= @professional.full_name %></h3>
+        <p><%= @professional.role %></p>
+      </div>
+    </div>
+    <div class="professional-details">
+      <div class="phone-email">
+        <p>Phone: <%= @professional.phone %></p>
+        <p>Email: <%= @professional.email %></p>
+      </div>
+      <div class="address-price">
+        <p>Address:<%= @professional.address %></p>
+        <p>Price: <%= @professional.price %></p>
+      </div>
+    </div>
   </div>
 </div>
