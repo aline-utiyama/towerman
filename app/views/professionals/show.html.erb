@@ -1,1 +1,15 @@
-<h1>Name: <%= @professional.full_name %></h1>
+<div class="container">
+  <div class="white-card">
+    <% if @professional.photo.attached? %>
+      <%= cl_image_tag @professional.photo.key %>
+    <% else %>
+      <i class="fas fa-user-circle user-avatar"></i>
+    <% end %>
+    <h3><%= @professional.full_name %></h3>
+    <p>Role: <%= @professional.role %></p>
+    <p>Price: <%= @professional.price %></p>
+    <p>Phone: <%= @professional.phone %></p>
+    <p>Email: <%= @professional.email %></p>
+    <p>Address:<%= @professional.address %></p>
+  </div>
+</div>
