@@ -1,26 +1,27 @@
 <div class="container">
   <div class="white-card professional-page">
+    <div class="prof-img">
+      <% if @professional.photo.attached? %>
+        <%= cl_image_tag @professional.photo.key %>
+      <% else %>
+        <i class="fas fa-user-circle user-avatar"></i>
+      <% end %>
+    </div>
     <div class="professional-main-info">
-      <div class="prof-img">
-        <% if @professional.photo.attached? %>
-          <%= cl_image_tag @professional.photo.key %>
-        <% else %>
-          <i class="fas fa-user-circle user-avatar"></i>
-        <% end %>
-      </div>
       <div class="prof-name-role">
         <h3><%= @professional.full_name %></h3>
-        <p><%= @professional.role %></p>
+        <h6><%= @professional.role %></h6>
       </div>
-    </div>
-    <div class="professional-details">
-      <div class="phone-email">
-        <p>Phone: <%= @professional.phone %></p>
-        <p>Email: <%= @professional.email %></p>
-      </div>
-      <div class="address-price">
-        <p>Address:<%= @professional.address %></p>
-        <p>Price: <%= @professional.price %></p>
+      <div class="professional-details">
+        <div class="prof-detail">
+          <p><%= @professional.details %></p>
+        </div>
+        <div class="phone-email">
+          <p><i class="fas fa-phone-square-alt"></i> <a href="tel:<%= @professional.phone %> " target="_blank"_><%= @professional.phone %></a> </p>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:<%= @professional.email %>" target="_blank"><%= @professional.email %></a> </p>
+          <p><i class="fas fa-map-marked-alt"></i> <%= @professional.address %></p>
+          <p><i class="fas fa-dollar-sign"></i> <%= @professional.price %></p>
+        </div>
       </div>
     </div>
   </div>
