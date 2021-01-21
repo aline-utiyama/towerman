@@ -22,10 +22,18 @@
           <p><%= @professional.details %></p>
         </div>
         <div class="phone-email">
-          <p><i class="fas fa-phone-square-alt"></i> <a href="tel:<%= @professional.phone %> " target="_blank"_><%= @professional.phone %></a> </p>
-          <p><i class="fas fa-envelope"></i> <a href="mailto:<%= @professional.email %>" target="_blank"><%= @professional.email %></a> </p>
-          <p><i class="fas fa-map-marked-alt"></i> <%= @professional.address %></p>
-          <p><i class="fas fa-dollar-sign"></i> ¥<%= @professional.price %></p>
+          <% if @professional.phone.present? %>
+            <p><i class="fas fa-phone-square-alt"></i> <a href="tel:<%= @professional.phone %> " target="_blank"_><%= @professional.phone %></a> </p>
+          <% end %>
+          <% if @professional.email.present? %>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:<%= @professional.email %>" target="_blank"><%= @professional.email %></a> </p>
+          <% end %>
+          <% if @professional.address.present? %>
+            <p><i class="fas fa-map-marked-alt"></i> <%= @professional.address %></p>
+          <% end %>
+          <% if @professional.price.present? %>
+            <p><i class="fas fa-dollar-sign"></i> ¥<%= @professional.price %></p>
+          <% end %>
         </div>
       </div>
     </div>
