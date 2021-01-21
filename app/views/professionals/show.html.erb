@@ -1,3 +1,8 @@
+<div class="title-full">
+  <div class="container">
+    <h1>Professional Profile</h1>
+  </div>
+</div>
 <div class="container">
   <div class="white-card professional-page">
     <div class="prof-img">
@@ -20,7 +25,7 @@
           <p><i class="fas fa-phone-square-alt"></i> <a href="tel:<%= @professional.phone %> " target="_blank"_><%= @professional.phone %></a> </p>
           <p><i class="fas fa-envelope"></i> <a href="mailto:<%= @professional.email %>" target="_blank"><%= @professional.email %></a> </p>
           <p><i class="fas fa-map-marked-alt"></i> <%= @professional.address %></p>
-          <p><i class="fas fa-dollar-sign"></i> <%= @professional.price %></p>
+          <p><i class="fas fa-dollar-sign"></i> ¥<%= @professional.price %></p>
         </div>
       </div>
     </div>

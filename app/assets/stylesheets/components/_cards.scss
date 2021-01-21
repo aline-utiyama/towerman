@@ -3,6 +3,7 @@
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   grid-gap: 16px;
   padding-bottom: 62px;
+  padding-top: 24px;
 
   a {
     text-decoration: none;
@@ -335,6 +336,8 @@
 
   .event-cards {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    padding-top: 24px;
+
 
   }
 
@@ -496,7 +499,9 @@
   i {
     font-size: 22px;
     margin-right: 4px;
-    color: #920d23;
+    //color: #920d23;
+    color: #1C8C6A;
+
     width: 24px;
 
 
@@ -534,6 +539,6 @@
 .phone-email {
 
   p {
-    margin-bottom: 4px;
+    margin-bottom: 8px;
   }
 }

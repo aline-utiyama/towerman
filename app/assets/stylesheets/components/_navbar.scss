@@ -68,6 +68,20 @@
 
 }
 
+.title-full {
+  //background-color: #972d3ede;
+  background-color: #ff2c2cd9;
+  height: 100px;
+
+  h1, h2, h3 {
+    color: #fff;
+    padding: 24px;
+
+  }
+}
+
+
+
 @media (max-width: 767px)  {
 
   .navbar-lewagon {
