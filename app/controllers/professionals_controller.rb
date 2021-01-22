@@ -26,6 +26,21 @@ class ProfessionalsController < ApplicationController
     end
   end
 
+  def edit
+    @professional = Professional.find(params[:id])
+    authorize @professional
+  end
+
+  def update
+    @professional = Professional.find(params[:id])
+    authorize @professional
+    if @professional.update(professional_params)
+      redirect_to professional_path(@professional)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def professional_params

@@ -1,11 +1,10 @@
 <div class="title-full">
   <div class="container">
-    <h1>Professional Profile</h1>
+    <h1>Edit Professional Profile</h1>
   </div>
 </div>
 <div class="container">
   <div class="white-card">
-    <h3>Add Your Professional Profile</h3>
     <%= simple_form_for @professional do |f| %>
       <%= f.input :photo, as: :file, :label => "Image"%>
       <%= f.input :full_name %>
