@@ -16,5 +16,7 @@
       <%= f.input :price %>
       <%= f.submit "Submit", class: "main-button"%>
     <% end %>
+    <%= link_to "Cancel my account", professional_path(@professional), data: { confirm: "Are you sure?" }, method: :delete %>
+    <%= link_to "Back", :back %>
   </div>
 </div>

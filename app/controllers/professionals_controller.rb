@@ -41,6 +41,15 @@ class ProfessionalsController < ApplicationController
     end
   end
 
+  def destroy
+    @professional = Professional.find(params[:id])
+    authorize @professional
+
+    @professional.destroy
+    flash[:notice] = "Professional profile was successfully destroyed"
+    redirect_to(:action => 'index')
+  end
+
   private
 
   def professional_params
