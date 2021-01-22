@@ -477,11 +477,11 @@
 
 .prof-img {
   i {
-     font-size: 420px;
+     font-size: 400px;
   }
 
   img {
-    width: 420px;
+    width: 400px;
 
   }
 }
@@ -540,5 +540,32 @@
 
   p {
     margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 376px) {
+
+  .title-full {
+    h1 {
+      font-size: 32px;
+      padding: 30px 12px;
+    }
+  }
+}
+
+@media (max-width: 991.98px) {
+  .professional-page {
+    flex-wrap: wrap;
+
+    .prof-img {
+
+    img {
+      width: 280px;
+    }
+
+    i {
+      font-size: 280px;
+    }
+    }
   }
 }
