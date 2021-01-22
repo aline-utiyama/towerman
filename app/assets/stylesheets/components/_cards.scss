@@ -467,6 +467,10 @@
   }
 }
 
+.professional-info {
+  text-align: center;
+}
+
 .professional-main-info {
   padding: 32px;
 
@@ -543,6 +547,16 @@
   }
 }
 
+.send-msg-butns {
+  display: flex;
+  padding: 16px 0;
+
+  a {
+    margin-right: 16px;
+  }
+
+}
+
 @media (max-width: 376px) {
 
   .title-full {
@@ -550,6 +564,10 @@
       font-size: 32px;
       padding: 30px 12px;
     }
+  }
+
+  .professional-main-info {
+    padding: 16px;
   }
 }
 

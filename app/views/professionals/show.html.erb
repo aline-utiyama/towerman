@@ -23,10 +23,10 @@
         </div>
         <div class="phone-email">
           <% if @professional.phone.present? %>
-            <p><i class="fas fa-phone-square-alt"></i> <a href="tel:<%= @professional.phone %> " target="_blank"_><%= @professional.phone %></a> </p>
+            <p><i class="fas fa-phone-square-alt"></i> <%= @professional.phone %> </p>
           <% end %>
           <% if @professional.email.present? %>
-            <p><i class="fas fa-envelope"></i> <a href="mailto:<%= @professional.email %>" target="_blank"><%= @professional.email %></a> </p>
+            <p><i class="fas fa-envelope"></i> <%= @professional.email %> </p>
           <% end %>
           <% if @professional.address.present? %>
             <p><i class="fas fa-map-marked-alt"></i> <%= @professional.address %></p>
@@ -34,6 +34,14 @@
           <% if @professional.price.present? %>
             <p><i class="fas fa-dollar-sign"></i> ¥<%= @professional.price %></p>
           <% end %>
+        </div>
+      </div>
+      <div class="send-msg-butns">
+        <div>
+          <a href="mailto:<%= @professional.email %>" target="_blank" class="main-button">Send email</a>
+        </div>
+        <div>
+          <a href="tel:<%= @professional.phone %> " target="_blank"class="main-button">Call</a>
         </div>
       </div>
     </div>
