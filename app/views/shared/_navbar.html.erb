@@ -30,7 +30,7 @@
               <%= link_to "My Profile", user_path(current_user), class: "dropdown-item line-top" %>
               <%= link_to "Update Account", edit_user_registration_path, class: "dropdown-item" %>
               <% if current_user.professional %>
-                <%= link_to "Professional Profile", professional_path(current_user.professional)  %>
+                <%#= link_to "Professional Profile", professional_path(current_user.professional)  %>
               <% else %>
                 <%= link_to "Add Professional Profile", new_professional_path, class: "dropdown-item"  %>
               <% end %>

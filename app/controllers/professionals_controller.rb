@@ -23,6 +23,7 @@ class ProfessionalsController < ApplicationController
       redirect_to professional_path(@professional)
     else
       render :new
+
     end
   end
 
