@@ -13,6 +13,12 @@
       <% end %>
     </div>
     <div class="professional-main-info">
+      <% if @professional.user == current_user %>
+        <%= link_to edit_professional_path(@professional) do %>
+          <i class="fas fa-pencil-alt"></i>
+          <span>Edit Profile</span>
+        <% end %>
+      <% end %>
       <div class="prof-name-role">
         <h3><%= @professional.full_name %></h3>
         <h6><%= @professional.role %></h6>
@@ -44,12 +50,6 @@
           <a href="tel:<%= @professional.phone %> " target="_blank"class="main-button">Call</a>
         </div>
       </div>
-      <% if @professional.user == current_user %>
-        <%= link_to edit_professional_path(@professional) do %>
-          <i class="fas fa-pencil-alt"></i>
-          <span>Edit</span>
-        <% end %>
-      <% end %>
     </div>
   </div>
 </div>

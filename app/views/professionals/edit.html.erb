@@ -1,10 +1,11 @@
 <div class="title-full">
   <div class="container">
-    <h1>Edit Professional Profile</h1>
+    <h1>Professional Profile</h1>
   </div>
 </div>
 <div class="container">
   <div class="white-card">
+    <h3>Edit Professional Profile</h3>
     <%= simple_form_for @professional do |f| %>
       <%= f.input :photo, as: :file, :label => "Image"%>
       <%= f.input :full_name %>
@@ -14,9 +15,14 @@
       <%= f.input :phone %>
       <%= f.input :address %>
       <%= f.input :price %>
-      <%= f.submit "Submit", class: "main-button"%>
+      <%= f.submit "Update", class: "main-button"%>
     <% end %>
-    <%= link_to "Cancel my account", professional_path(@professional), data: { confirm: "Are you sure?" }, method: :delete %>
-    <%= link_to "Back", :back %>
+    <div class="cancel-pf-account">
+      <h3>Cancel Professional Account</h3>
+      <%= link_to "Cancel Account", professional_path(@professional), data: { confirm: "Are you sure?" }, method: :delete, class: "cancel-account" %>
+    </div>
+    <%= link_to :back do %>
+      <i class="fas fa-chevron-circle-left"></i> <span>Back</span>
+    <% end %>
   </div>
 </div>
