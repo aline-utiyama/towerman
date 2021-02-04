@@ -44,7 +44,12 @@
           <a href="tel:<%= @professional.phone %> " target="_blank"class="main-button">Call</a>
         </div>
       </div>
+      <% if @professional.user == current_user %>
+        <%= link_to edit_professional_path(@professional) do %>
+          <i class="fas fa-pencil-alt"></i>
+          <span>Edit</span>
+        <% end %>
+      <% end %>
     </div>
   </div>
-  <%= link_to "edit", edit_professional_path(@professional)  %>
 </div>
