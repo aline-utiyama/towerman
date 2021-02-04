@@ -23,19 +23,19 @@
           <%#= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "All Events", events_path, class: "dropdown-item only-mobile" %>
-            <%= link_to "Joining", event_atendees_path, class: "dropdown-item" %>
-            <%= link_to "Created", event_event_path, class: "dropdown-item" %>
+            <%= link_to "Joining Events", event_atendees_path, class: "dropdown-item" %>
+            <%= link_to "Created Events", event_event_path, class: "dropdown-item" %>
             <%= link_to "Add New Event", new_event_path, class: "dropdown-item" %>
             <div class="menu-col">
-              <%= link_to "My Profile", user_path(current_user), class: "dropdown-item line-top" %>
-              <%= link_to "Update Account", edit_user_registration_path, class: "dropdown-item" %>
               <% if current_user.professional %>
-                <%#= link_to "Professional Profile", professional_path(current_user.professional)  %>
+                <%= link_to "Professional Profile", professional_path(current_user.professional), class: "dropdown-item"  %>
               <% else %>
                 <%= link_to "Add Professional Profile", new_professional_path, class: "dropdown-item"  %>
               <% end %>
             </div>
             <div class="menu-col">
+              <%= link_to "My Profile", user_path(current_user), class: "dropdown-item line-top" %>
+              <%= link_to "Update Account", edit_user_registration_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item line-top" %>
             </div>
           </div>
