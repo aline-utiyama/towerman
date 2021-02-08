@@ -1,0 +1,13 @@
+<div class="container">
+  <%= simple_form_for @post do |f| %>
+    <%= f.input :comment %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit class: 'main-button' %>
+  <% end %>
+  <% @posts.each do |post| %>
+    <% if post.photo.attached? %>
+      <%= cl_image_tag post.photo.key %>
+    <% end %>
+    <%= post.comment %>
+  <% end %>
+</div>

@@ -16,4 +16,6 @@ Rails.application.routes.draw do
 
   resources :professionals
   resources :recycles
+
+  resources :posts
 end

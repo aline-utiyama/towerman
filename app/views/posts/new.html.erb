@@ -1,0 +1,7 @@
+<div class="container">
+  <%= simple_form_for @post do |f| %>
+    <%= f.input :photo, as: :file %>
+    <%= f.input :comment %>
+    <%= f.submit class: 'main-button' %>
+  <% end %>
+</div>
