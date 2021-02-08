@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :event, dependent: :destroy
   has_many :event_atendees_as_event, through: :event, source: :event_atendees
   has_many :event_atendees
+  has_many :posts
   has_one_attached :photo, dependent: :destroy
 
 
