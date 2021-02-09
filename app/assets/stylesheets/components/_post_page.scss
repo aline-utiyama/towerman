@@ -9,9 +9,24 @@
     padding: 16px;
     min-height: 240px;
     margin: 32px auto;
+
+    .post-img {
+    width: 100%;
+    }
   }
 
-  img {
-    width: 100%;
+  .user-post-info {
+    display: flex;
+    align-items: center;
+
+    h5 {
+      margin: 0;
+      padding-left: 4px;
+    }
   }
+
+  .post-content {
+    padding: 8px 0;
+  }
+
 }

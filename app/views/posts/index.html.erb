@@ -8,10 +8,18 @@
   </div>
   <% @posts.each do |post| %>
     <div class="white-card">
-      <%= post.comment %>
-      <% if post.photo.attached? %>
-        <%= cl_image_tag post.photo.key %>
-      <% end %>
+      <div class="user-post-info">
+        <%= cl_image_tag post.user.photo.key , class: 'avatar'%>
+        <h5><%= post.user.username %></h5>
+      </div>
+      <div class="post-content">
+        <%= post.comment %>
+      </div>
+      <div>
+        <% if post.photo.attached? %>
+          <%= cl_image_tag post.photo.key, class: 'post-img' %>
+        <% end %>
+      </div>
     </div>
   <% end %>
 </div>
