@@ -2,8 +2,17 @@
   <div class="white-card">
     <%= simple_form_for @post do |f| %>
       <%= f.input :comment %>
-      <%= f.input :photo, as: :file %>
-      <%= f.submit class: 'main-button' %>
+      <div class="post-upload">
+        <div class="avatar-preview">
+          <div id="imagePreview" style="background-image: url(http://i.pravatar.cc/500?img=7);">
+          </div>
+        </div>
+        <div class="photo-submit-btn">
+          <%= f.input :photo, as: :file, input_html: {accept: ('.png, .jpg, .jpeg'), id: 'imageUpload'}%>
+          <a class="btn"><i class="fas fa-camera"></i></a>
+        </div>
+        <%= f.submit class: 'main-button' %>
+      </div>
     <% end %>
   </div>
   <% @posts.each do |post| %>

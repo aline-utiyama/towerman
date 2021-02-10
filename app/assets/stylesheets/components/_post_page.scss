@@ -7,7 +7,7 @@
 
   .white-card {
     padding: 16px;
-    min-height: 240px;
+    min-height: 200px;
     margin: 32px auto;
 
     .post-img {
@@ -29,4 +29,9 @@
     padding: 8px 0;
   }
 
+}
+
+.post-upload {
+  display: flex;
+  align-items: center;
 }

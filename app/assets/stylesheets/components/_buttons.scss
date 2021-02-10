@@ -10,3 +10,38 @@
   text-decoration: none;
   color: #fff;
 }
+
+.photo-submit-btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+
+  label {
+    display: none;
+  }
+
+  .btn {
+    //border: 2px solid gray;
+    color: gray;
+    background-color: #f4f4f4;
+    //padding: 8px 20px;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 16px;
+  }
+
+  .form-group {
+    margin: 0;
+  }
+}
+
+.photo-submit-btn input[type=file]{
+  font-size: 40px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+
+
+}
