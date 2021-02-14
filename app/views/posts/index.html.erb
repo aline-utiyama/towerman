@@ -1,14 +1,14 @@
 <div class="container post-container">
   <div class="white-card">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <%= simple_form_for @post do |f| %>
       <%= f.input :comment %>
+      <div class="preview-img">
+        <img id="blah" src="#" alt="your image" />
+      </div>
       <div class="post-upload">
-        <div class="avatar-preview">
-          <div id="imagePreview" style="background-image: url(http://i.pravatar.cc/500?img=7);">
-          </div>
-        </div>
         <div class="photo-submit-btn">
-          <%= f.input :photo, as: :file, input_html: {accept: ('.png, .jpg, .jpeg'), id: 'imageUpload'}%>
+          <%= f.input :photo, as: :file, input_html: {accept: ('.png, .jpg, .jpeg'), id: 'imgInp'}%>
           <a class="btn"><i class="fas fa-camera"></i></a>
         </div>
         <%= f.submit class: 'main-button' %>
