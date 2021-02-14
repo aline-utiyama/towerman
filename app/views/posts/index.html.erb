@@ -15,7 +15,7 @@
       </div>
     <% end %>
   </div>
-  <% @posts.each do |post| %>
+  <% Post.all.each do |post| %>
     <div class="white-card">
       <div class="user-post-info">
         <%= cl_image_tag post.user.photo.key , class: 'avatar'%>

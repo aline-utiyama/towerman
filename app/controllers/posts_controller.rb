@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = policy_scope(Post).order(created_at: :desc)
     @post = Post.new
+    @posts = policy_scope(Post).order(created_at: :desc)
     authorize @post
   end
 
