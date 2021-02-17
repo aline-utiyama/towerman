@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   def index
     @post = Post.new
     @posts = policy_scope(Post).order(created_at: :desc)
+    @post_replies = PostReply.new
     authorize @post
   end
 
