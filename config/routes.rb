@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   resources :recycles
 
   resources :posts
+
+  resources :post_replies
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_08_133040) do
+ActiveRecord::Schema.define(version: 2021_02_17_130945) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,7 +74,9 @@ ActiveRecord::Schema.define(version: 2021_02_08_133040) do
     t.bigint "post_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
     t.index ["post_id"], name: "index_post_replies_on_post_id"
+    t.index ["user_id"], name: "index_post_replies_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -138,6 +140,7 @@ ActiveRecord::Schema.define(version: 2021_02_08_133040) do
   add_foreign_key "interest_tags", "tags"
   add_foreign_key "interest_tags", "users"
   add_foreign_key "post_replies", "posts"
+  add_foreign_key "post_replies", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "professionals", "users"
   add_foreign_key "recycles", "users"
