@@ -21,7 +21,10 @@
 
     h5 {
       margin: 0;
-      padding-left: 4px;
+    }
+
+    .avatar {
+      width: 48px;
     }
   }
 
@@ -44,4 +47,14 @@
 
 .preview-img img {
   width: 100%;
+}
+
+.user-name-date {
+  padding-left: 4px;
+
+  span {
+    font-size: 14px;
+    color: #7d858d;
+
+  }
 }

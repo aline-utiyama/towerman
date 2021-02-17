@@ -19,7 +19,10 @@
     <div class="white-card">
       <div class="user-post-info">
         <%= cl_image_tag post.user.photo.key , class: 'avatar'%>
-        <h5><%= post.user.username %></h5>
+        <div class="user-name-date">
+          <h5><%= post.user.username %></h5>
+          <span><%= post.created_at.strftime("%B at %-l:%M %p") %></span>
+        </div>
       </div>
       <div class="post-content">
         <%= post.comment %>
