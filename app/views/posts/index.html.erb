@@ -33,7 +33,7 @@
         <% end %>
       </div>
       <div>
-        <%= simple_form_for  @post_reply  do |f| %>
+        <%= simple_form_for [ post, @post_reply ] do |f| %>
           <%= f.input :comment %>
           <%= f.submit %>
         <% end %>
