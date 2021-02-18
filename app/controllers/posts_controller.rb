@@ -4,6 +4,7 @@ class PostsController < ApplicationController
     @post = Post.new
     @posts = policy_scope(Post).order(created_at: :desc)
     @post_reply = PostReply.new
+    @post_replies = policy_scope(PostReply).order(data_time: :asc)
     authorize @post
   end
 

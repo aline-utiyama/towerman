@@ -33,6 +33,10 @@
         <% end %>
       </div>
       <div>
+        <% post.post_replies.each do |replies| %>
+          <p><%= replies.user.username %></p>
+          <p><%= replies.comment %></p>
+        <% end %>
         <%= simple_form_for [ post, @post_reply ] do |f| %>
           <%= f.input :comment %>
           <%= f.submit %>

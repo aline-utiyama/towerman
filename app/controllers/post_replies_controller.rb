@@ -17,7 +17,8 @@ class PostRepliesController < ApplicationController
     if @post_reply.save
       redirect_to posts_path
     else
-      render :new
+      flash.now[:alert] = "'Your new post couldn't be created!"
+      redirect_to posts_path
     end
 
   end
