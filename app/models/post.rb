@@ -4,5 +4,5 @@ class Post < ApplicationRecord
   has_one_attached :photo, dependent: :destroy
 
   validates :comment, length: { minimum: 3 }
-  validates_associated :post_replies
+
 end
