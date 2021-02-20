@@ -560,6 +560,15 @@
 
 @media (max-width: 376px) {
 
+
+
+  .professional-main-info {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+
   .title-full {
     h1 {
       font-size: 32px;
@@ -567,9 +576,7 @@
     }
   }
 
-  .professional-main-info {
-    padding: 16px;
-  }
+
 }
 
 @media (max-width: 991.98px) {
