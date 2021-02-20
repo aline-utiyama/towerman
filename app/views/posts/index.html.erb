@@ -30,7 +30,7 @@
       </script>
     <% end %>
   </div>
-  <% Post.all.each do |post| %>
+  <% @posts.each do |post| %>
     <div class="white-card">
       <div class="user-post-info">
         <%= cl_image_tag post.user.photo.key , class: 'avatar'%>
