@@ -14,4 +14,7 @@ $("#imgInp").change(function() {
   readURL(this);
 });
 
+
+
 export {readURL}
+

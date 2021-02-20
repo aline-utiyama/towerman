@@ -39,6 +39,10 @@
   align-items: center;
   padding-top: 8px;
 
+  input[type="submit"]:disabled {
+    background-image: linear-gradient(to bottom right, #bdc1c0, #bec3c2);
+  }
+
 }
 
 .preview-img img[src="#"] {

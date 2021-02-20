@@ -11,8 +11,23 @@
           <%= f.input :photo, as: :file, input_html: {accept: ('.png, .jpg, .jpeg'), id: 'imgInp'}%>
           <a class="btn"><i class="fas fa-camera"></i></a>
         </div>
-        <%= f.submit class: 'main-button' %>
+        <%= f.submit class: 'main-button', disabled: true, :onkeyup => "postSuccess()", id: 'post-button' %>
       </div>
+      <script type="text/javascript">
+        function postSuccess() {
+         const text = document.querySelector("#post_comment");
+        
+          text.addEventListener('keyup', (event) => {
+            console.log(event);
+            if(text.value.length > 0) {
+                  document.querySelector('#post-button').disabled = false;
+              } else {
+                  document.querySelector('#post-button').disabled = true;
+              }
+          });
+          }
+          postSuccess();
+      </script>
     <% end %>
   </div>
   <% Post.all.each do |post| %>
@@ -39,9 +54,24 @@
         <% end %>
         <%= simple_form_for [ post, @post_reply ] do |f| %>
           <%= f.input :comment %>
-          <%= f.submit %>
+          <%= f.submit   id: "start-button" , disabled: true, :onkeyup => "success()" %>
         <% end %>
       </div>
     </div>
   <% end %>
 </div>
+<script type="text/javascript">
+  function success() {
+   const text = document.querySelector("#post_reply_comment");
+  
+    text.addEventListener('keyup', (event) => {
+      console.log(event);
+      if(text.value.length > 0) {
+            document.querySelector('#start-button').disabled = false;
+        } else {
+            document.querySelector('#start-button').disabled = true;
+        }
+    });
+    }
+    success();
+</script>

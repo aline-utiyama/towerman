@@ -27,10 +27,19 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import {readURL} from '../components/preview';
+import { readURL } from '../components/preview';
+//import { activeButton } from '../components/active';
+//import {verify} from '../components/active_button';
+//import { firstTest } from '../components/test';
+//import { active } from '../components/active_button';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   readURL(input);
+  //activeButton();
+  //verify();
+  //firstTest();
+  //active();
+
 });
