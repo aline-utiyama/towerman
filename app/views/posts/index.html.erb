@@ -53,8 +53,10 @@
           <p><%= replies.comment %></p>
         <% end %>
         <%= simple_form_for [ post, @post_reply ] do |f| %>
-          <%= f.input :comment %>
-          <%= f.submit   id: "start-button" , disabled: true, :onkeyup => "success()" %>
+          <div class="post-input">
+            <%= f.input :comment %>
+          </div>
+          <%= f.submit   class: "start-button" , disabled: true, :onkeyup => "success()" %>
         <% end %>
       </div>
     </div>
@@ -62,16 +64,25 @@
 </div>
 <script type="text/javascript">
   function success() {
-   const text = document.querySelector("#post_reply_comment");
+   const post = document.querySelectorAll(".new_post_reply");
+    console.log(post)
   
-    text.addEventListener('keyup', (event) => {
-      console.log(event);
-      if(text.value.length > 0) {
-            document.querySelector('#start-button').disabled = false;
+    post.forEach((item) => {
+      item.addEventListener('keyup', (event) => {
+        //console.log(item);
+        const text = event.currentTarget;
+  
+        //console.log(text.querySelector('.start-button'));
+        const textArea = text.querySelector('.post-input textarea');
+        console.log(textArea.value.length);
+  
+        if (textArea.value.length > 0) {
+          text.querySelector('.start-button').disabled = false;
         } else {
-            document.querySelector('#start-button').disabled = true;
+          text.querySelector('.start-button').disabled = true;
         }
+      });
     });
-    }
-    success();
+  }
+  success();
 </script>
