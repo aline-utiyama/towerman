@@ -47,10 +47,15 @@
           <%= cl_image_tag post.photo.key, class: 'post-img' %>
         <% end %>
       </div>
-      <div>
+      <div class="replies">
         <% post.post_replies.each do |replies| %>
-          <p><%= replies.user.username %></p>
-          <p><%= replies.comment %></p>
+          <div class="post-replies">
+            <%= cl_image_tag replies.user.photo.key, class: 'avatar'  %>
+            <div class="replies-comment">
+              <h6><%= replies.user.username %></h6>
+              <p><%= replies.comment %></p>
+            </div>
+          </div>
         <% end %>
         <%= simple_form_for [ post, @post_reply ] do |f| %>
           <div class="post-input">

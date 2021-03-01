@@ -62,3 +62,30 @@
 
   }
 }
+
+.replies {
+  border-top: 1px solid #f4f4f4;
+}
+
+.post-replies {
+  display: flex;
+  align-items: start;
+  margin: 16px 0;
+
+  .replies-comment {
+    background-color: #f4f4f4;
+    padding: 8px;
+    margin-left: 4px;
+    border-radius: 16px;
+    width: 100%;
+
+    h6 {
+      margin: 0;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
