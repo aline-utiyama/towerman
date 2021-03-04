@@ -1,8 +1,24 @@
 <div class="footer">
   <div class="footer-content">
     <ul>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact Us</a></li>
+      <li>
+        <%= link_to events_path do %>
+          <i class="far fa-calendar-alt"></i>
+          <p>Events</p>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to professionals_path do %>
+          <i class="fas fa-user-tie"></i>
+          <p>Proffessional</p>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to posts_path do %>
+          <i class="far fa-comments"></i>
+          <p>Info</p>
+        <% end %>
+      </li>
     </ul>
   </div>
 </div>
