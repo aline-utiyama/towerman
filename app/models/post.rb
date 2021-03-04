@@ -3,6 +3,6 @@ class Post < ApplicationRecord
   has_many :post_replies, dependent: :destroy
   has_one_attached :photo, dependent: :destroy
 
-  validates :comment, length: { minimum: 3 }
+  validates :comment, presence: true
 
 end

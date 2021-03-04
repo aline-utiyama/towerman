@@ -58,10 +58,12 @@
           </div>
         <% end %>
         <%= simple_form_for [ post, @post_reply ] do |f| %>
-          <div class="post-input">
-            <%= f.input :comment %>
+          <div class="post-comment">
+            <div class="post-input">
+              <%= f.input :comment %>
+            </div>
+            <%= f.submit   class: "main-button start-button", value: 'Send' , disabled: true, :onkeyup => "success()" %>
           </div>
-          <%= f.submit   class: "start-button" , disabled: true, :onkeyup => "success()" %>
         <% end %>
       </div>
     </div>

@@ -4,5 +4,5 @@ class PostReply < ApplicationRecord
   has_one_attached :photo, dependent: :destroy
 
   validates_associated :post
-  validates :comment, length: { minimum: 3, too_short: '%{count} characters is the minimum allowed' }
+  validates :comment, presence: true
 end

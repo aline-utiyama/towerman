@@ -89,3 +89,29 @@
     }
   }
 }
+
+.post-comment {
+  display: flex;
+  align-items: flex-end;
+
+  .post-input {
+    flex-grow: 1;
+
+    .form-group {
+      margin-bottom: 0;
+    }
+  }
+
+  input[type="submit"]:disabled {
+    background-image: linear-gradient(to bottom right, #bdc1c0, #bec3c2);
+  }
+
+  .main-button {
+    width: 80px;
+    margin-left: 8px;
+  }
+
+  textarea.form-control {
+    height: 40px;
+  }
+}
